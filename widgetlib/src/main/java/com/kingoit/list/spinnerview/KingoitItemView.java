@@ -1,4 +1,4 @@
-package kingoitSpinnerView;
+package com.kingoit.list.spinnerview;
 
 import android.content.Context;
 import android.content.res.TypedArray;

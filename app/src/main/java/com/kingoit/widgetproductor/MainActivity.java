@@ -11,7 +11,7 @@ import com.kingoit.widgetproductor.tip.TooltipActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import kingoitSpinnerView.KingoitItemView;
+import com.kingoit.list.spinnerview.KingoitItemView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
