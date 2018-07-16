@@ -35,6 +35,8 @@ public class KingoitItemView extends LinearLayout implements SelectItemAdapter.I
     private SelectItemAdapter mSelectItemAdapter;
     private PopupWindow mSelectWindow;
 
+    private List<String> mList = new ArrayList<>();
+
     interface ViewType {
         int TextStyle = 1;
         int SpinnerStyle = 2;
@@ -129,6 +131,7 @@ public class KingoitItemView extends LinearLayout implements SelectItemAdapter.I
         if (mSelectItemAdapter == null) {
             throw new RuntimeException("the current viewType isn't SpinnerStyle , check your viewType");
         }
+        this.mList = list;
         mSelectItemAdapter.setList(list);
     }
 
@@ -141,13 +144,7 @@ public class KingoitItemView extends LinearLayout implements SelectItemAdapter.I
             mSelectWindow.setOutsideTouchable(true);
             mSelectWindow.setFocusable(true);
         }
-        List<String> list = new ArrayList<>();
-        list.add("qqq");
-        list.add("ww");
-        list.add("qqeeq");
-        list.add("rr");
-        list.add("tt");
-        mSelectItemAdapter.setList(list);
+        mSelectItemAdapter.setList(mList);
         mSelectWindow.showAsDropDown(mRightTextView, 0, 0);
     }
 

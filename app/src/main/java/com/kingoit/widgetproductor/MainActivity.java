@@ -8,6 +8,11 @@ import android.view.View;
 import com.kingoit.widgetproductor.list.FlowLayoutActivity;
 import com.kingoit.widgetproductor.tip.TooltipActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import kingoitSpinnerView.KingoitItemView;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -16,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         findViewById(R.id.to_flow_layout).setOnClickListener(this);
         findViewById(R.id.to_tooltip).setOnClickListener(this);
+        kingoitItemViewTest();
     }
 
     @Override
@@ -30,5 +36,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             default:
                 break;
         }
+    }
+
+    private void kingoitItemViewTest() {
+        KingoitItemView kingoitItemView = findViewById(R.id.test);
+        List<String> list = new ArrayList<>();
+        list.add("qqqdsfasdfasdf");
+        list.add("wwwqewrqwr");
+        list.add("qqeeeqasdasda");
+        list.add("rrrgfsdgag");
+        list.add("tthshsdfhsdfgt");
+        list.add("qqqyyyyyyyyyyyyyyyyyy");
+        kingoitItemView.setList(list);
     }
 }

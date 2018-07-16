@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <kingoitSpinnerView.KingoitItemView
+        android:id="@+id/test"
         android:layout_width="500dp"
         android:layout_height="50dp"
         android:background="@color/colorAccent"
