@@ -8,37 +8,39 @@
 
 ## 提示类
 
-| 序号   | 功能块     | 提交人  | 更新时间       | 主要类  | 功能说明         | 示例代码位置       |
-| :--- | :------ | :--- | :--------- | :--- | :----------- | ------------ |
-|      |         |      |            |      |              |              |
-|      |         |      |            |      |              |              |
-|      |         |      |            |      |              |              |
-|      |         |      |            |      |              |              |
-|      |         |      |            |      |              |              |
-|      |         |      |            |      |              |              |
-|      |         |      |            |      |              |              |
-|      |         |      |            |      |              |              |
-|      |         |      |            |      |              |              |
+| 序号   | 功能块     | 提交人  | 更新时间       | 主要功能类  | 示例代码位置       |
+| :---: | :------: | :---: | :---------: | :--- | :----------- |
+|      |         |      |            |      |              |
+|      |         |      |            |      |              |
+|      |         |      |            |      |              |
+|      |         |      |            |      |              |
+|      |         |      |            |      |              |
+|      |         |      |            |      |              |
+|      |         |      |            |      |              |
+|      |         |      |            |      |              |
+|      |         |      |            |      |              |
 
 
 
 ## 列表类
 
-|  序号 |  功能块  | 提交人| 更新时间    | 主要类 | 功能说明      | 示例代码位置   |
-| :--- | :------ | :--- | :--------- | :--- | :----------- | :------------ |
-|   1  |  流式布局 | 左志杰| 2018-07-16 | **KingoitFlowLayout** |   流式布局    |com.kingoit.widgetproductor.list **FlowLayoutActivity** |
-|   2   |   Spinner |  曾雍皓    | 2018-07-16 | **KingoitItemView**  |  利用PopupWindow+recyclerview 替代Spinner   |com.kingoit.widgetproductor **MainActivity** |
-|      |         |      |            |      |              |              |
-|      |         |      |            |      |              |              |
-|      |         |      |            |      |              |              |
-|      |         |      |            |      |              |              |
-|      |         |      |            |      |              |              |
-|      |         |      |            |      |              |              |
-|      |         |      |            |      |              |              |
+|  序号 |  功能块  | 提交人| 更新时间    | 主要功能类   | 示例代码位置   |
+| :---: | :------: | :---: | :---------: | :--- | :----------- |
+|   1  |  流式布局 | 左志杰| 2018-07-16 | **KingoitFlowLayout**   |com.kingoit.widgetproductor.list.FlowLayoutActivity |
+|  2 | Spinner |曾雍皓| 2018-07-16 | **KingoitItemView**|com.kingoit.widgetproductor.MainActivity |
+|      |         |      |            |      |              |
+|      |         |      |            |      |              |
+|      |         |      |            |      |              |
+|      |         |      |            |      |              |
+|      |         |      |            |      |              |
+|      |         |      |            |      |              |
+|      |         |      |            |      |              |
 
 
 ### 1、流式布局
+流式布局  : 常用于搜索历史记录、标签展示
 ![流式布局](https://upload-images.jianshu.io/upload_images/5332977-9010dc33399830ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 2、Spinner
+利用PopupWindow+recyclerview 替代Spinner
 ![Spinner ](https://upload-images.jianshu.io/upload_images/5332977-8e06f9c1563be7a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
