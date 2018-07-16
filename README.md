@@ -1,17 +1,41 @@
 # WidgetProductor
+项目地址：https://github.com/MyateJx/WidgetProductor
 
-The Widget productor testing, filtering and providing the common widgets we always used during software developing.
+## 说明
+- **1、提交代码需严格按照`Alibaba`代码规范**
+- **2、每个功能块代码上传，需标明作者以及最新测试时间**
+- **3、每个功能块代码需在`app Module`中编写示例代码，并做好标注**
 
-![titlepic](https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=382394808,438871168&fm=173&app=25&f=JPEG?w=540&h=461&s=A5725885C0334796EF85387B0300C010)
+## 提示类
 
-According to the daily use, widgets can be divided into following 3 category, were tip widgets, navigator widgets and form widgets.
+| 序号   | 功能块     | 提交人  | 更新时间       | 主要类  | 功能说明         | 示例代码位置       |
+| :--- | :------ | :--- | :--------- | :--- | :----------- | ------------ |
+|      |         |      |            |      |              |              |
+|      |         |      |            |      |              |              |
+|      |         |      |            |      |              |              |
+|      |         |      |            |      |              |              |
+|      |         |      |            |      |              |              |
+|      |         |      |            |      |              |              |
+|      |         |      |            |      |              |              |
+|      |         |      |            |      |              |              |
+|      |         |      |            |      |              |              |
 
-For example, Tip widgets contain such as Toast, Snackbar, CookieBar, BubbleView, dialog, ProgressBar, LoadMore and so on.
 
-Navigator widgets contain such as Toolbar, Spinner, PopupWindow, ListView, RecyclerView, Drawer and so on.
 
-Form widgets contain such as TextView, EditText, Seekbar, Switcher, Button and so on.
+## 列表类
 
-![tooltips](https://user-images.githubusercontent.com/99822/38155597-a5e9f4bc-3446-11e8-8db1-4dbd670584f5.gif)
-![loadToast](https://camo.githubusercontent.com/96592555c77792a317564369f8ff53bafcba2a13/687474703a2f2f692e696d6775722e636f6d2f57776f784c4d752e676966)
-![TSnackbar](https://raw.githubusercontent.com/AndreiD/TSnackBar/master/app/snackbar.gif)
+### 1、流式布局
+
+|  序号 |  功能块  | 提交人| 更新时间    | 主要类 | 功能说明      | 示例代码位置   |    示例图片    |
+| :--- | :------ | :--- | :--------- | :--- | :----------- | ------------ |--------|
+|   1  |  流式布局 | 左志杰| 2018-07-16 | KingoitFlowLayout  |   流式布局    |    com.kingoit.list.flowLayout          |   ![](https://upload-images.jianshu.io/upload_images/5332977-a393455e11893fe8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)|
+|      |         |      |            |      |              |              |        |
+|      |         |      |            |      |              |              |        |
+|      |         |      |            |      |              |              |        |
+|      |         |      |            |      |              |              |        |
+|      |         |      |            |      |              |              |        |
+|      |         |      |            |      |              |              |        |
+|      |         |      |            |      |              |              |        |
+|      |         |      |            |      |              |              |        |
+
+

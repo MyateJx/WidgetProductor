@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">widgetproductor</string>
+    <string name="flow_layout_str">流式布局</string>
 </resources>
