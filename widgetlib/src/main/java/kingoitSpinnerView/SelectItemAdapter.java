@@ -2,6 +2,7 @@ package kingoitSpinnerView;
 
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SelectItemAdapter extends BaseAdapter {
+public class SelectItemAdapter extends RecyclerView.Adapter<SelectItemAdapter.ViewHolder> {
 
     private Context mContext;
     private List<String> mList = new ArrayList<>();
@@ -27,49 +28,36 @@ public class SelectItemAdapter extends BaseAdapter {
     }
 
     @Override
-    public int getCount() {
-        return mList.size();
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(mContext).inflate(R.layout.select_item_view, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public Object getItem(int i) {
-        return mList.get(i);
-    }
-
-    @Override
-    public long getItemId(int i) {
-        return i;
-    }
-
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        ViewHolder vh = null;
-        final String text = mList.get(i);
-        if (view == null) {
-            view = LayoutInflater.from(mContext).inflate(R.layout.select_item_view, viewGroup, false);
-            vh = new ViewHolder(view);
-            view.setTag(vh);
-        } else {
-            vh = (ViewHolder) view.getTag();
-        }
-
-        vh.textView.setText(text);
-        vh.textView.setOnClickListener(new View.OnClickListener() {
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        final String text = mList.get(position);
+        holder.textView.setText(text);
+        holder.textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (listener != null) {
+                if (null != listener) {
                     listener.ISelectItemAdapterListener_onItemClick(text);
                 }
             }
         });
-        return null;
     }
 
-    private class ViewHolder {
+    @Override
+    public int getItemCount() {
+        return mList.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textView;
 
         ViewHolder(View view) {
+            super(view);
             textView = view.findViewById(R.id.input_selectitem_account);
         }
 

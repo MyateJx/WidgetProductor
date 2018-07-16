@@ -3,15 +3,20 @@ package kingoitSpinnerView;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.kingoit.widgetlib.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,7 +25,7 @@ import java.util.List;
  * Created by zyh on 2018/7/16.
  */
 
-public class KingoitItemView extends LinearLayout implements SelectItemAdapter.ISelectItemAdapterListener {
+public class KingoitItemView extends LinearLayout implements SelectItemAdapter.ISelectItemAdapterListener, View.OnClickListener {
 
     private TextView mLeftTextView;
     private TextView mRightTextView;
@@ -28,6 +33,7 @@ public class KingoitItemView extends LinearLayout implements SelectItemAdapter.I
     private int currentStyle = Integer.MIN_VALUE;
     private IKingoitItemViewListener mListener;
     private SelectItemAdapter mSelectItemAdapter;
+    private PopupWindow mSelectWindow;
 
     interface ViewType {
         int TextStyle = 1;
@@ -44,10 +50,10 @@ public class KingoitItemView extends LinearLayout implements SelectItemAdapter.I
 
     public KingoitItemView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        LayoutInflater.from(context).inflate(R.layout.view_attribute_spinner, this);
-        mLeftTextView = findViewById(R.id.tv_attr_key);
-        mRightTextView = findViewById(R.id.tv_attr_value);
-        mRightEditView = findViewById(R.id.tv_attr_value_edittext);
+        View view = LayoutInflater.from(context).inflate(R.layout.view_attribute_spinner, this);
+        mLeftTextView = view.findViewById(R.id.tv_attr_key);
+        mRightTextView = view.findViewById(R.id.tv_attr_value);
+        mRightEditView = view.findViewById(R.id.tv_attr_value_edittext);
         if (attrs != null) {
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.KingoitItemView);
             currentStyle = typeFilter(typedArray.getString(R.styleable.KingoitItemView_viewType));
@@ -71,6 +77,7 @@ public class KingoitItemView extends LinearLayout implements SelectItemAdapter.I
             case ViewType.SpinnerStyle:
                 mRightTextView.setVisibility(VISIBLE);
                 mRightEditView.setVisibility(GONE);
+                mRightTextView.setOnClickListener(this);
                 initAdapter();
                 break;
             case ViewType.EditStyle:
@@ -125,9 +132,39 @@ public class KingoitItemView extends LinearLayout implements SelectItemAdapter.I
         mSelectItemAdapter.setList(list);
     }
 
+    private void showSelector() {
+        if (mSelectWindow == null) {
+            View view = LayoutInflater.from(getContext()).inflate(R.layout.kingoit_item_list, null);
+            ((RecyclerView) view.findViewById(R.id.input_select_list)).setAdapter(mSelectItemAdapter);
+            mSelectWindow = new PopupWindow(view, mRightTextView.getMeasuredWidth(), ViewGroup.LayoutParams.WRAP_CONTENT, true);
+            mSelectWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_input_bottom_normal));
+            mSelectWindow.setOutsideTouchable(true);
+            mSelectWindow.setFocusable(true);
+        }
+        List<String> list = new ArrayList<>();
+        list.add("qqq");
+        list.add("ww");
+        list.add("qqeeq");
+        list.add("rr");
+        list.add("tt");
+        mSelectItemAdapter.setList(list);
+        mSelectWindow.showAsDropDown(mRightTextView, 0, 0);
+    }
+
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+        if (id == R.id.tv_attr_value) {
+            showSelector();
+        }
+    }
+
     @Override
     public void ISelectItemAdapterListener_onItemClick(String text) {
         mRightTextView.setText(text);
+        if (null != mSelectWindow) {
+            mSelectWindow.dismiss();
+        }
         if (null != mListener) {
             mListener.IKingoitItemViewListener_onSpinnerClick(text);
         }

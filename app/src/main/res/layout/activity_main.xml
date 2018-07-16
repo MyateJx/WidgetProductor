@@ -16,5 +16,20 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <kingoitSpinnerView.KingoitItemView
+        android:layout_width="500dp"
+        android:layout_height="50dp"
+        android:background="@color/colorAccent"
+        app:viewType="SpinnerStyle"
+        app:leftText="qqq"
+        app:rightText="www"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </kingoitSpinnerView.KingoitItemView>
+
+    <include layout="@layout/list_package_menu"/>
+
 
 </android.support.constraint.ConstraintLayout>
