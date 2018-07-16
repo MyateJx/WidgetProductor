@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
 
     <TextView
         android:id="@+id/to_flow_layout"
-        android:clickable="true"
+        style="@style/MainActivityTextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorBgTag"
-        android:gravity="center"
-        android:padding="5dp"
-        android:layout_margin="5dp"
-        android:textColor="@color/colorBlack"
         android:text="流式布局"/>
+
+    <TextView
+        android:id="@+id/to_tooltip"
+        style="@style/MainActivityTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tooltip"/>
 
 </LinearLayout>
