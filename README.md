@@ -1,12 +1,12 @@
 # WidgetProductor
 项目地址：https://github.com/MyateJx/WidgetProductor
 
-##说明
+## 说明
 - **1、提交代码需严格按照`Alibaba`代码规范**
 - **2、每个功能块代码上传，需标明作者以及最新测试时间**
 - **3、每个功能块代码需在`app Module`中编写示例代码，并做好标注**
 
-##提示类
+## 提示类
 
 | 序号   | 功能块     | 提交人  | 更新时间       | 主要类  | 功能说明         | 示例代码位置       |
 | :--- | :------ | :--- | :--------- | :--- | :----------- | ------------ |
@@ -22,13 +22,13 @@
 
 
 
-##列表类
+## 列表类
 
-###1、流式布局
+### 1、流式布局
 
 |  序号 |  功能块  | 提交人| 更新时间    | 主要类 | 功能说明      | 示例代码位置   |    示例图片    |
 | :--- | :------ | :--- | :--------- | :--- | :----------- | ------------ |--------|
-|   1  |  流式布局 | 左志杰| 2018-07-16 |      |   流式布局    |              |   ![](https://upload-images.jianshu.io/upload_images/5332977-a393455e11893fe8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)|
+|   1  |  流式布局 | 左志杰| 2018-07-16 | KingoitFlowLayout  |   流式布局    |    com.kingoit.list.flowLayout          |   ![](https://upload-images.jianshu.io/upload_images/5332977-a393455e11893fe8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)|
 |      |         |      |            |      |              |              |        |
 |      |         |      |            |      |              |              |        |
 |      |         |      |            |      |              |              |        |
