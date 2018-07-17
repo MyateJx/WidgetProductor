@@ -30,6 +30,8 @@
             android:onClick="@{()->clickProxy.toSpinner()}"
             android:text="spinner"/>
 
+
+
     </LinearLayout>
 
 

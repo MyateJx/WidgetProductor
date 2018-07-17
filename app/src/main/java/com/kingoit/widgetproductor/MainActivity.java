@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.kingoit.widgetproductor.databinding.ActivityMainBinding;
 import com.kingoit.widgetproductor.list.FlowLayoutActivity;
+import com.kingoit.widgetproductor.list.SpinnerActivity;
 import com.kingoit.widgetproductor.tip.TooltipActivity;
 
 import java.util.ArrayList;
@@ -24,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mBinding.setClickProxy(new ClickProxy());
-        kingoitItemViewTest();
     }
 
     public class ClickProxy {
@@ -37,19 +37,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public void toSpinner() {
-//            startActivity(new Intent(MainActivity.this, FlowLayoutActivity.class));
+            startActivity(new Intent(MainActivity.this, SpinnerActivity.class));
         }
     }
 
-    private void kingoitItemViewTest() {
-        KingoitItemView kingoitItemView = findViewById(R.id.test);
-        List<String> list = new ArrayList<>();
-        list.add("qqqdsfasdfasdf");
-        list.add("wwwqewrqwr");
-        list.add("qqeeeqasdasda");
-        list.add("rrrgfsdgag");
-        list.add("tthshsdfhsdfgt");
-        list.add("qqqyyyyyyyyyyyyyyyyyy");
-        kingoitItemView.setList(list);
-    }
+
 }
