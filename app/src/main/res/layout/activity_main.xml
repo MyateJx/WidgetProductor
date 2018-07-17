@@ -1,36 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <com.kingoit.list.spinnerview.KingoitItemView
-        android:id="@+id/test"
-        android:layout_width="500dp"
-        android:layout_height="50dp"
-        android:background="@color/colorAccent"
-        app:viewType="SpinnerStyle"
-        app:leftText="qqq"
-        app:rightText="www"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        <variable
+            name="clickProxy"
+            type="com.kingoit.widgetproductor.MainActivity.ClickProxy"/>
 
-    </com.kingoit.list.spinnerview.KingoitItemView>
+    </data>
 
-    <include layout="@layout/list_package_menu"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvTitleTip"
+            style="@style/TitleTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提示类"/>
+
+        <include
+            android:id="@+id/include_tip"
+            layout="@layout/tip_package_menu"
+            app:clickProxy="@{clickProxy}"/>
+
+        <com.kingoit.list.spinnerview.KingoitItemView
+            android:id="@+id/test"
+            android:layout_width="500dp"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:leftText="qqq"
+            app:rightText="www"
+            app:viewType="SpinnerStyle">
+
+        </com.kingoit.list.spinnerview.KingoitItemView>
+
+        <TextView
+            android:id="@+id/tvTitleList"
+            style="@style/TitleTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="列表类"/>
+
+        <include
+            android:id="@+id/include_list"
+            layout="@layout/list_package_menu"
+            app:clickProxy="@{clickProxy}"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

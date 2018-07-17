@@ -17,4 +17,10 @@
         <item name="android:textColor">@color/colorBlack</item>
     </style>
 
+    <style name="TitleTextViewStyle">
+        <item name="android:layout_margin">@dimen/margin5</item>
+        <item name="android:textSize">@dimen/margin25</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
 </resources>

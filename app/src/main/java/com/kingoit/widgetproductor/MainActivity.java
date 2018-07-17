@@ -1,10 +1,12 @@
 package com.kingoit.widgetproductor;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.kingoit.widgetproductor.databinding.ActivityMainBinding;
 import com.kingoit.widgetproductor.list.FlowLayoutActivity;
 import com.kingoit.widgetproductor.tip.TooltipActivity;
 
@@ -13,28 +15,29 @@ import java.util.List;
 
 import com.kingoit.list.spinnerview.KingoitItemView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
+
+    private ActivityMainBinding mBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        findViewById(R.id.to_flow_layout).setOnClickListener(this);
-        findViewById(R.id.to_tooltip).setOnClickListener(this);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        mBinding.setClickProxy(new ClickProxy());
         kingoitItemViewTest();
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.to_flow_layout:
-                startActivity(new Intent(MainActivity.this, FlowLayoutActivity.class));
-                break;
-            case R.id.to_tooltip:
-                startActivity(new Intent(MainActivity.this, TooltipActivity.class));
-                break;
-            default:
-                break;
+    public class ClickProxy {
+        public void toTooltip() {
+            startActivity(new Intent(MainActivity.this, TooltipActivity.class));
+        }
+
+        public void toFlowLayout() {
+            startActivity(new Intent(MainActivity.this, FlowLayoutActivity.class));
+        }
+
+        public void toSpinner() {
+//            startActivity(new Intent(MainActivity.this, FlowLayoutActivity.class));
         }
     }
 

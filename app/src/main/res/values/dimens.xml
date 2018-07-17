@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_25">-25dp</dimen>
+    <dimen name="margin0">0dp</dimen>
+    <dimen name="margin1">1dp</dimen>
+    <dimen name="margin2">2dp</dimen>
+    <dimen name="margin3">3dp</dimen>
+    <dimen name="margin5">5dp</dimen>
+    <dimen name="margin6">6dp</dimen>
+    <dimen name="margin7">7dp</dimen>
+    <dimen name="margin8">8dp</dimen>
+    <dimen name="margin9">9dp</dimen>
+    <dimen name="margin10">10dp</dimen>
+    <dimen name="margin12">12dp</dimen>
+    <dimen name="margin15">15dp</dimen>
+    <dimen name="margin16">16dp</dimen>
+    <dimen name="margin20">20dp</dimen>
+    <dimen name="margin25">25dp</dimen>
+    <dimen name="margin30">30dp</dimen>
+    <dimen name="margin35">35dp</dimen>
+    <dimen name="margin40">40dp</dimen>
+    <dimen name="margin50">50dp</dimen>
+    <dimen name="margin55">55dp</dimen>
+    <dimen name="margin60">60dp</dimen>
+    <dimen name="margin70">70dp</dimen>
+    <dimen name="margin80">80dp</dimen>
+    <dimen name="margin90">90dp</dimen>
+    <dimen name="margin100">100dp</dimen>
+
+</resources>
