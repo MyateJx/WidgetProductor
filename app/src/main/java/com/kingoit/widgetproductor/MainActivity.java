@@ -9,6 +9,8 @@ import android.view.View;
 import com.kingoit.widgetproductor.databinding.ActivityMainBinding;
 import com.kingoit.widgetproductor.list.FlowLayoutActivity;
 import com.kingoit.widgetproductor.list.SpinnerActivity;
+import com.kingoit.widgetproductor.tip.BannerActivity;
+import com.kingoit.widgetproductor.tip.ToastActivity;
 import com.kingoit.widgetproductor.tip.TooltipActivity;
 
 import java.util.ArrayList;
@@ -38,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
 
         public void toSpinner() {
             startActivity(new Intent(MainActivity.this, SpinnerActivity.class));
+        }
+
+        public void toToast() {
+            startActivity(new Intent(MainActivity.this, ToastActivity.class));
+        }
+
+        public void toBanner() {
+            startActivity(new Intent(MainActivity.this, BannerActivity.class));
         }
     }
 

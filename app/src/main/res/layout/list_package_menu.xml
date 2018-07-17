@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="@{()->clickProxy.toFlowLayout()}"
-            android:text="流式布局"/>
+            android:text="2.1 流式布局"/>
 
         <TextView
             android:id="@+id/to_spinner"
@@ -28,8 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="@{()->clickProxy.toSpinner()}"
-            android:text="spinner"/>
-
+            android:text="2.2 spinner"/>
 
 
     </LinearLayout>

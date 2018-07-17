@@ -16,9 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".list.FlowLayoutActivity"/>
+        
         <activity android:name=".tip.TooltipActivity"/>
+        <activity android:name=".tip.ToastActivity"/>
+        <activity android:name=".tip.BannerActivity"/>
+
+        <activity android:name=".list.FlowLayoutActivity"/>
         <activity android:name=".list.SpinnerActivity"/>
+
     </application>
 
 </manifest>
