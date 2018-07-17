@@ -26,9 +26,9 @@
 
 |  序号 |  功能块  | 提交人| 更新时间    | 主要功能类   | 示例代码位置   |
 | :---: | :------: | :---: | :---------: | :--- | :----------- |
-|   1  |  流式布局 | 左志杰| 2018-07-16 | **KingoitFlowLayout**   |com.kingoit.widgetproductor.list.FlowLayoutActivity |
-|  2 | Spinner |曾雍皓| 2018-07-16 | **KingoitItemView**|com.kingoit.widgetproductor.MainActivity |
-|      |         |      |            |      |              |
+|   1  |  流式布局 | 左志杰| 2018-07-16 | **KingoitFlowLayout** |com.kingoit.widgetproductor.list.FlowLayoutActivity |
+|   2  | Spinner |曾雍皓| 2018-07-16 | **KingoitItemView**|com.kingoit.widgetproductor.MainActivity |
+|   3  | Tooltip | 许明君 | 2018-07-16 | **KingoitTooltip** | com.kingoit.widgetproductor.tip.TooltipActivity |
 |      |         |      |            |      |              |
 |      |         |      |            |      |              |
 |      |         |      |            |      |              |
@@ -46,3 +46,10 @@
 利用PopupWindow+recyclerview 替代Spinner
 
 ![Spinner ](https://upload-images.jianshu.io/upload_images/5332977-8e06f9c1563be7a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+### 3、Tooltip
+工具提示： 在目标View旁展开提示
+
+![Tooltip ](https://upload-images.jianshu.io/upload_images/57036-c8fefe498ea87276.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
