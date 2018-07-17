@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".list.FlowLayoutActivity">
-        </activity>
+        <activity android:name=".list.FlowLayoutActivity"/>
+        <activity android:name=".tip.TooltipActivity"/>
     </application>
 
 </manifest>

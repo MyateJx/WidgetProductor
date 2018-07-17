@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/colorWhite"
-              android:orientation="vertical"
-              tools:context=".MainActivity">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorBgTagClass"
-        android:gravity="left|center_vertical"
-        android:padding="5dp"
-        android:text="列表"
-        android:textColor="@color/colorBlack"
-        android:textSize="14sp"/>
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.kingoit.list.spinnerview.KingoitItemView
+        android:id="@+id/test"
+        android:layout_width="500dp"
+        android:layout_height="50dp"
+        android:background="@color/colorAccent"
+        app:viewType="SpinnerStyle"
+        app:leftText="qqq"
+        app:rightText="www"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </com.kingoit.list.spinnerview.KingoitItemView>
 
     <include layout="@layout/list_package_menu"/>
 
-</LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
