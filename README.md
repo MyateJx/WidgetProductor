@@ -47,11 +47,13 @@
 ![Spinner ](https://upload-images.jianshu.io/upload_images/5332977-8e06f9c1563be7a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 1.1、Tooltip - 引导提示
-作用：弹出引导提示，告诉用户可点击某处，起指明的作用
+作用：弹出引导提示，告诉用户可点击某处，起指明的作用。
+
 期望：
-1.可在目标view的上、下、左、右边弹出。
-2.可调整提示的字体大小、字体颜色、背景颜色。
-3.可设置在屏幕中的方位，上、下、左、右。
+
+1. 可在目标view的上、下、左、右边弹出。
+2. 可调整提示的字体大小、字体颜色、背景颜色。
+3. 可设置在屏幕中的方位，上、下、左、右。
 
 ![Tooltip ](https://upload-images.jianshu.io/upload_images/57036-addbdd5ad22563cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
