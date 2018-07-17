@@ -33,6 +33,21 @@ public class TooltipActivity extends AppCompatActivity {
             KingoitTooltip.getInstance().showTip(getApplicationContext(),
                     mBinding.btnHide, mBinding.rootLayout, "哈哈哈", KingoitTooltip.POSITION_ABOVE);
         }
+
+        public void toShowLeft() {
+            KingoitTooltip.getInstance().showTip(getApplicationContext(),
+                    mBinding.btnHide, mBinding.rootLayout, "哈哈哈", KingoitTooltip.POSITION_LEFT_TO);
+        }
+
+        public void toShowRight() {
+            KingoitTooltip.getInstance().showTip(getApplicationContext(),
+                    mBinding.btnHide, mBinding.rootLayout, "哈哈哈", KingoitTooltip.POSITION_RIGHT_TO);
+        }
+
+        public void toShowBottom() {
+            KingoitTooltip.getInstance().showTip(getApplicationContext(),
+                    mBinding.btnHide, mBinding.rootLayout, "哈哈哈", KingoitTooltip.POSITION_BELOW);
+        }
     }
 
 }
