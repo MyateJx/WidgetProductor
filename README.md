@@ -50,6 +50,6 @@
 ### 3、Tooltip
 工具提示： 在目标View旁展开提示
 
-![Tooltip ](https://upload-images.jianshu.io/upload_images/57036-c8fefe498ea87276.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Tooltip ](https://upload-images.jianshu.io/upload_images/57036-addbdd5ad22563cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
