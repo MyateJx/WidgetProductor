@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="clickProxy"
+            type="com.kingoit.widgetproductor.tip.DialogActivity.ClickProxy"/>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_hide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:onClick="@{()->clickProxy.toHide()}"
+            android:text="点我，隐藏它"/>
+
+        <Button
+            android:id="@+id/btn_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_hide"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="60dp"
+            android:onClick="@{()->clickProxy.toShow()}"
+            android:text="点我，显示它"/>
+
+        <Button
+            android:id="@+id/btn_show_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_hide"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:layout_toLeftOf="@+id/btn_show"
+            android:onClick="@{()->clickProxy.toShowLeft()}"
+            android:text="点我，显示左边"/>
+
+        <Button
+            android:id="@+id/btn_show_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_hide"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:layout_toRightOf="@+id/btn_show"
+            android:onClick="@{()->clickProxy.toShowRight()}"
+            android:text="点我，显示右边"/>
+
+        <Button
+            android:id="@+id/btn_show_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_show"
+            android:layout_centerHorizontal="true"
+            android:onClick="@{()->clickProxy.toShowBottom()}"
+            android:text="点我，显示底部"/>
+
+    </RelativeLayout>
+
+</layout>

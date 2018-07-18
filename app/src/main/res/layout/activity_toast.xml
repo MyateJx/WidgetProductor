@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
-            android:onClick="@{()->clickProxy.top()}"
+            android:onClick="@{()->clickProxy.toShowTop()}"
             android:text="点我，显示顶部"/>
 
         <Button
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
-            android:onClick="@{()->clickProxy.center()}"
+            android:onClick="@{()->clickProxy.toShowCenter()}"
             android:text="点我，显示中部"/>
 
         <Button

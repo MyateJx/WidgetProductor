@@ -4,19 +4,14 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import com.kingoit.widgetproductor.databinding.ActivityMainBinding;
 import com.kingoit.widgetproductor.list.FlowLayoutActivity;
 import com.kingoit.widgetproductor.list.SpinnerActivity;
 import com.kingoit.widgetproductor.tip.BannerActivity;
+import com.kingoit.widgetproductor.tip.DialogActivity;
 import com.kingoit.widgetproductor.tip.ToastActivity;
 import com.kingoit.widgetproductor.tip.TooltipActivity;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import com.kingoit.list.spinnerview.KingoitItemView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
 
         public void toBanner() {
             startActivity(new Intent(MainActivity.this, BannerActivity.class));
+        }
+
+        public void toDialog() {
+            startActivity(new Intent(MainActivity.this, DialogActivity.class));
         }
     }
 

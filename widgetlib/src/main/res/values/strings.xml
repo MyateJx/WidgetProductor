@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">widgetLib</string>
+    <string name="cancel">取消</string>
+    <string name="sure">确定</string>
+    <string name="tip">提示</string>
+    <string name="progress">进度查看</string>
 </resources>

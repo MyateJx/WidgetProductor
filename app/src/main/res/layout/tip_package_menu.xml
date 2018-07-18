@@ -39,6 +39,14 @@
             android:onClick="@{()->clickProxy.toBanner()}"
             android:text="1.3 横幅提示"/>
 
+        <TextView
+            android:id="@+id/to_dialog"
+            style="@style/MainActivityTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->clickProxy.toDialog()}"
+            android:text="1.4 对话框"/>
+
     </LinearLayout>
 
 </layout>

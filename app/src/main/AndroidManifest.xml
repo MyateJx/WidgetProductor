@@ -23,6 +23,7 @@
 
         <activity android:name=".list.FlowLayoutActivity"/>
         <activity android:name=".list.SpinnerActivity"/>
+        <activity android:name=".tip.DialogActivity"/>
 
     </application>
 
