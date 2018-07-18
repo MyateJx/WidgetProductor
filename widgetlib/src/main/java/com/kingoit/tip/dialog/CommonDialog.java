@@ -11,23 +11,24 @@ import com.kingoit.widgetlib.R;
 
 
 /**
- * Created by Administrator on 2017/9/20.
+ * Created by xmj on 2018/7/18.
  */
 
 public class CommonDialog extends Dialog implements View.OnClickListener {
-    private TextView contentTxt;
-    private TextView titleTxt;
-    private TextView submitTxt;
-    private TextView cancelTxt;
+
+    private TextView tvContent;
+    private TextView tvTitle;
+    private TextView tvSubmit;
+    private TextView tvCancel;
 
     private Context mContext;
+    private String title;
     private String content;
-    private OnCloseListener listener;
     private String positiveName;
     private String negativeName;
-    private String title;
+    private OnDialogClickListener listener;
     private View lineView;
-    private boolean flag = false;
+    private boolean isToShowButtons = false;
 
     public CommonDialog(Context context) {
         super(context);
@@ -35,33 +36,25 @@ public class CommonDialog extends Dialog implements View.OnClickListener {
     }
 
     public CommonDialog(Context context, int themeResId, String content) {
-        super(context, themeResId);
-        this.mContext = context;
+        this(context);
         this.content = content;
     }
 
-    public CommonDialog(Context context, int themeResId, String content, OnCloseListener listener) {
-        super(context, themeResId);
-        this.mContext = context;
-        this.content = content;
+    public CommonDialog(Context context, int themeResId, String content, OnDialogClickListener listener) {
+        this(context, themeResId, content);
         this.listener = listener;
-    }
-
-    public CommonDialog(Context context, int themeResId, String content, OnCloseListener listener, boolean flag) {
-        super(context, themeResId);
-        this.mContext = context;
-        this.content = content;
-        this.listener = listener;
-        this.flag = flag;
-    }
-
-    protected CommonDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
-        super(context, cancelable, cancelListener);
-        this.mContext = context;
+        if (this.listener != null) {
+            isToShowButtons = true;
+        }
     }
 
     public CommonDialog setTitle(String title) {
         this.title = title;
+        return this;
+    }
+
+    public CommonDialog setContent(String content) {
+        this.content = content;
         return this;
     }
 
@@ -85,34 +78,33 @@ public class CommonDialog extends Dialog implements View.OnClickListener {
     }
 
     private void initView() {
-        contentTxt = (TextView) findViewById(R.id.content);
-        titleTxt = (TextView) findViewById(R.id.title);
-        submitTxt = (TextView) findViewById(R.id.submit);
-        submitTxt.setOnClickListener(this);
-        cancelTxt = (TextView) findViewById(R.id.cancel);
-        cancelTxt.setOnClickListener(this);
+        tvTitle = (TextView) findViewById(R.id.title);
+        tvContent = (TextView) findViewById(R.id.content);
+        tvSubmit = (TextView) findViewById(R.id.submit);
+        tvSubmit.setOnClickListener(this);
+        tvCancel = (TextView) findViewById(R.id.cancel);
+        tvCancel.setOnClickListener(this);
         lineView = findViewById(R.id.view_line);
 
-        contentTxt.setText(content);
+        if (!TextUtils.isEmpty(title)) {
+            tvTitle.setText(title);
+        }
+
+        if (!TextUtils.isEmpty(content)) {
+            tvContent.setText(content);
+        }
+
         if (!TextUtils.isEmpty(positiveName)) {
-            submitTxt.setText(positiveName);
+            tvSubmit.setText(positiveName);
         }
 
         if (!TextUtils.isEmpty(negativeName)) {
-            cancelTxt.setText(negativeName);
+            tvCancel.setText(negativeName);
         }
 
-        if (!TextUtils.isEmpty(title)) {
-            titleTxt.setText(title);
-        }
-
-        if (flag) {
-            cancelTxt.setVisibility(View.VISIBLE);
-            lineView.setVisibility(View.VISIBLE);
-        } else {
-            cancelTxt.setVisibility(View.GONE);
-            lineView.setVisibility(View.GONE);
-        }
+        tvSubmit.setVisibility(isToShowButtons ? View.VISIBLE : View.GONE);
+        tvCancel.setVisibility(isToShowButtons ? View.VISIBLE : View.GONE);
+        lineView.setVisibility(isToShowButtons ? View.VISIBLE : View.GONE);
 
     }
 
@@ -134,7 +126,7 @@ public class CommonDialog extends Dialog implements View.OnClickListener {
 
     }
 
-    public interface OnCloseListener {
+    public interface OnDialogClickListener {
         void onClick(boolean confirm);
     }
 }

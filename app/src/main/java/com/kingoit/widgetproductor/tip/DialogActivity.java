@@ -11,7 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.kingoit.tip.dialog.CommonDialog;
-import com.kingoit.tip.dialog.ProgressDialogManager;
+import com.kingoit.tip.dialog.KingoitDialog;
 import com.kingoit.widgetproductor.R;
 import com.kingoit.widgetproductor.databinding.ActivityDialogBinding;
 
@@ -68,17 +68,21 @@ public class DialogActivity extends AppCompatActivity {
         }
 
         public void toShowRight() {
-            mProgressDialog = ProgressDialogManager.showHorizontalProgressDialog(DialogActivity.this,
-                    "msg???", new DialogInterface.OnCancelListener() {
+            mProgressDialog = KingoitDialog.showHorizontalProgressDialog(
+                    DialogActivity.this, "标题啊", "消息啊", 0,
+                    200, true, new DialogInterface.OnCancelListener() {
                         @Override
                         public void onCancel(DialogInterface dialog) {
                             Toast.makeText(DialogActivity.this, "hahah", Toast.LENGTH_SHORT).show();
                         }
-                    }, 200);
+                    });
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     for (int i = 0; i < 200; i++) {
+                        if (!mProgressDialog.isShowing()) {
+                            break;
+                        }
                         try {
                             Thread.sleep(20);
                         } catch (InterruptedException e) {
@@ -96,7 +100,7 @@ public class DialogActivity extends AppCompatActivity {
         }
 
         public void toShowBottom() {
-            ProgressDialogManager.showProgressDialog(DialogActivity.this, "xxxx");
+
         }
     }
 

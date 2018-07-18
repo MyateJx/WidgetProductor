@@ -105,4 +105,8 @@ public class KingoitDialog {
         return progressDialog;
     }
 
+    public static void showCommonDiaog(){
+
+    }
+
 }
