@@ -28,7 +28,8 @@ public class CommonDialog extends Dialog implements View.OnClickListener {
     private String negativeName;
     private OnDialogClickListener listener;
     private View lineView;
-    private boolean isToShowButtons = false;
+    private boolean isToShowPositiveButton = false;
+    private boolean isToShowNegitiveButton = false;
 
     public CommonDialog(Context context) {
         super(context);
@@ -43,9 +44,6 @@ public class CommonDialog extends Dialog implements View.OnClickListener {
     public CommonDialog(Context context, int themeResId, String content, OnDialogClickListener listener) {
         this(context, themeResId, content);
         this.listener = listener;
-        if (this.listener != null) {
-            isToShowButtons = true;
-        }
     }
 
     public CommonDialog setTitle(String title) {
@@ -60,11 +58,17 @@ public class CommonDialog extends Dialog implements View.OnClickListener {
 
     public CommonDialog setPositiveButton(String name) {
         this.positiveName = name;
+        if (!TextUtils.isEmpty(positiveName)) {
+            isToShowPositiveButton = true;
+        }
         return this;
     }
 
     public CommonDialog setNegativeButton(String name) {
         this.negativeName = name;
+        if (!TextUtils.isEmpty(negativeName)) {
+            isToShowNegitiveButton = true;
+        }
         return this;
     }
 
@@ -102,9 +106,9 @@ public class CommonDialog extends Dialog implements View.OnClickListener {
             tvCancel.setText(negativeName);
         }
 
-        tvSubmit.setVisibility(isToShowButtons ? View.VISIBLE : View.GONE);
-        tvCancel.setVisibility(isToShowButtons ? View.VISIBLE : View.GONE);
-        lineView.setVisibility(isToShowButtons ? View.VISIBLE : View.GONE);
+        tvSubmit.setVisibility(isToShowPositiveButton ? View.VISIBLE : View.GONE);
+        tvCancel.setVisibility(isToShowNegitiveButton ? View.VISIBLE : View.GONE);
+        lineView.setVisibility(isToShowPositiveButton && isToShowNegitiveButton ? View.VISIBLE : View.GONE);
 
     }
 
