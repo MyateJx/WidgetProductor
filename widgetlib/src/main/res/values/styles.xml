@@ -21,7 +21,7 @@
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="alertDialog" parent="@android:style/Theme.Dialog">
+    <style name="CommonDialogStyle" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowIsTranslucent">false</item>
@@ -34,9 +34,11 @@
 
     <style name="CommonDialogButtonStyle">
         <item name="android:layout_weight">1.0</item>
+        <item name="android:background">@drawable/com_dialog_background_detail_bg</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/font_blue</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@drawable/com_dialog_txt_bg</item>
+        <item name="android:textSize">@dimen/com_btn_font_size_large</item>
+        <item name="android:padding">@dimen/com_layout_padding</item>
     </style>
 
 </resources>

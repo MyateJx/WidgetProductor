@@ -59,7 +59,7 @@ public class DialogActivity extends AppCompatActivity {
         }
 
         public void toShowLeft() {
-            new CommonDialog(DialogActivity.this)
+            new CommonDialog(DialogActivity.this, R.style.CommonDialogStyle)
                     .setTitle("我是对话框标题")
                     .setContent("回房间看速度快粉红色的肯恢复")
                     .addButton("按钮1", new CommonDialog.OnDialogClickListener() {
