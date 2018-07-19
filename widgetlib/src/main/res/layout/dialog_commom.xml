@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="300dp"
     android:layout_height="match_parent"
     android:background="@drawable/bg_round_white"
     android:orientation="vertical">
@@ -13,8 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:gravity="center_horizontal"
-        android:textColor="@color/colorBlack"
-        android:textSize="15sp"
+        android:textColor="@color/colorDialogTitle"
+        android:textSize="18sp"
+        android:textStyle="bold"
         tools:text="示例标题"/>
 
     <TextView
@@ -29,23 +30,23 @@
         android:gravity="center"
         android:lineSpacingExtra="3dp"
         android:text=""
-        android:textColor="@color/font_common_1"
+        android:textColor="@color/colorDialogContent"
         android:textSize="14sp"/>
 
     <View
         android:id="@+id/line_above_btn_container"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:visibility="gone"
-        android:background="@color/commom_background"/>
+        android:background="@color/commom_background"
+        android:visibility="gone"/>
 
     <LinearLayout
-        android:visibility="gone"
         android:id="@+id/btn_container"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#00000000"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
 
     </LinearLayout>

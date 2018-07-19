@@ -10,4 +10,7 @@
     <color name="transparent">#00000000</color> <!--透明-->
     <color name="com_app_theme_color">#718DF3</color>
 
+    <color name="colorDialogTitle">#455a64</color>
+    <color name="colorDialogContent">#546e7a</color>
+    <color name="colorDialogButtonPressed">#c5cae9</color>
 </resources>

@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -57,8 +58,8 @@ public class CommonDialog extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_commom);
-        setCancelable(false);
-        setCanceledOnTouchOutside(false);
+//        setCancelable(false);
+//        setCanceledOnTouchOutside(false);
         initView();
     }
 
@@ -82,7 +83,8 @@ public class CommonDialog extends Dialog {
                 LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) btnContainer.getLayoutParams();
                 layoutParams.weight = 1;
                 button.setLayoutParams(layoutParams);
-                button.setTextAppearance(getContext(), R.style.CommonDialogButtonStyle);
+                button.setBackgroundResource(R.drawable.com_dialog_background_detail_bg);
+                button.setGravity(Gravity.CENTER);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

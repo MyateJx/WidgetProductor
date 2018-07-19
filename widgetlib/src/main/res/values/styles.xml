@@ -36,6 +36,7 @@
         <item name="android:layout_weight">1.0</item>
         <item name="android:background">@drawable/com_dialog_background_detail_bg</item>
         <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
         <item name="android:textColor">@drawable/com_dialog_txt_bg</item>
         <item name="android:textSize">@dimen/com_btn_font_size_large</item>
         <item name="android:padding">@dimen/com_layout_padding</item>

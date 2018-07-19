@@ -55,11 +55,11 @@ public class DialogActivity extends AppCompatActivity {
         }
 
         public void toShow() {
-            new CommonDialog(DialogActivity.this).setTitle("我是对话框标题").show();
+            KingoitDialog.getCommonDialog(DialogActivity.this).setTitle("我是对话框标题").show();
         }
 
         public void toShowLeft() {
-            new CommonDialog(DialogActivity.this, R.style.CommonDialogStyle)
+            KingoitDialog.getCommonDialog(DialogActivity.this)
                     .setTitle("我是对话框标题")
                     .setContent("回房间看速度快粉红色的肯恢复")
                     .addButton("按钮1", new CommonDialog.OnDialogClickListener() {

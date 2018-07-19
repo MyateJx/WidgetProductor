@@ -105,8 +105,14 @@ public class KingoitDialog {
         return progressDialog;
     }
 
-    public static void showCommonDiaog(){
-
+    /**
+     * 获得普通对话框
+     *
+     * @param context
+     * @return
+     */
+    public static CommonDialog getCommonDialog(Context context) {
+        return new CommonDialog(context, R.style.CommonDialogStyle);
     }
 
 }
