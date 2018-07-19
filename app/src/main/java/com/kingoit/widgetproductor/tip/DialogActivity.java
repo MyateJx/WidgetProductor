@@ -61,8 +61,25 @@ public class DialogActivity extends AppCompatActivity {
         public void toShowLeft() {
             new CommonDialog(DialogActivity.this)
                     .setTitle("我是对话框标题")
-                    .setPositiveButton("sure")
-                    .setNegativeButton("cancel")
+                    .setContent("回房间看速度快粉红色的肯恢复")
+                    .addButton("按钮1", new CommonDialog.OnDialogClickListener() {
+                        @Override
+                        public void onClick() {
+                            Toast.makeText(DialogActivity.this, "按钮1", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addButton("按钮2", new CommonDialog.OnDialogClickListener() {
+                        @Override
+                        public void onClick() {
+                            Toast.makeText(DialogActivity.this, "按钮2", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addButton("按钮3", new CommonDialog.OnDialogClickListener() {
+                        @Override
+                        public void onClick() {
+                            Toast.makeText(DialogActivity.this, "按钮3", Toast.LENGTH_SHORT).show();
+                        }
+                    })
                     .show();
 
         }

@@ -5,31 +5,39 @@ import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.kingoit.widgetlib.R;
+
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 
 /**
  * Created by xmj on 2018/7/18.
  */
 
-public class CommonDialog extends Dialog implements View.OnClickListener {
+public class CommonDialog extends Dialog {
 
     private TextView tvContent;
     private TextView tvTitle;
-    private TextView tvSubmit;
-    private TextView tvCancel;
+    private LinearLayout mBtnContainer;
+//    private TextView tvSubmit;
+//    private TextView tvCancel;
 
     private Context mContext;
     private String title;
     private String content;
-    private String positiveName;
-    private String negativeName;
+    //    private String positiveName;
+//    private String negativeName;
     private OnDialogClickListener listener;
     private View lineView;
     private boolean isToShowPositiveButton = false;
     private boolean isToShowNegitiveButton = false;
+    private LinkedHashMap<String, OnDialogClickListener> mListeners = new LinkedHashMap<>();
 
     public CommonDialog(Context context) {
         super(context);
@@ -56,7 +64,14 @@ public class CommonDialog extends Dialog implements View.OnClickListener {
         return this;
     }
 
-    public CommonDialog setPositiveButton(String name) {
+    public CommonDialog addButton(String name, OnDialogClickListener listener) {
+        if (mListeners.get(name) == null) {
+            mListeners.put(name, listener);
+        }
+        return this;
+    }
+
+    /*public CommonDialog setPositiveButton(String name) {
         this.positiveName = name;
         if (!TextUtils.isEmpty(positiveName)) {
             isToShowPositiveButton = true;
@@ -70,7 +85,7 @@ public class CommonDialog extends Dialog implements View.OnClickListener {
             isToShowNegitiveButton = true;
         }
         return this;
-    }
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,11 +99,31 @@ public class CommonDialog extends Dialog implements View.OnClickListener {
     private void initView() {
         tvTitle = (TextView) findViewById(R.id.title);
         tvContent = (TextView) findViewById(R.id.content);
-        tvSubmit = (TextView) findViewById(R.id.submit);
-        tvSubmit.setOnClickListener(this);
-        tvCancel = (TextView) findViewById(R.id.cancel);
-        tvCancel.setOnClickListener(this);
-        lineView = findViewById(R.id.view_line);
+
+        if (mListeners.size() > 0) {
+            lineView = findViewById(R.id.line_above_btn_container);
+            lineView.setVisibility(View.VISIBLE);
+            mBtnContainer = (LinearLayout) findViewById(R.id.btn_container);
+            mBtnContainer.setVisibility(View.VISIBLE);
+
+            Iterator iter = mListeners.entrySet().iterator();
+            while (iter.hasNext()) {
+                Map.Entry entry = (Map.Entry) iter.next();
+                String name = (String) entry.getKey();
+                final OnDialogClickListener listener = (OnDialogClickListener) entry.getValue();
+                Button button = new Button(getContext());
+                button.setTextAppearance(getContext(), R.style.CommonDialogButtonStyle);
+                button.setText(name);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        listener.onClick();
+                        dismiss();
+                    }
+                });
+                mBtnContainer.addView(button);
+            }
+        }
 
         if (!TextUtils.isEmpty(title)) {
             tvTitle.setText(title);
@@ -97,40 +132,9 @@ public class CommonDialog extends Dialog implements View.OnClickListener {
         if (!TextUtils.isEmpty(content)) {
             tvContent.setText(content);
         }
-
-        if (!TextUtils.isEmpty(positiveName)) {
-            tvSubmit.setText(positiveName);
-        }
-
-        if (!TextUtils.isEmpty(negativeName)) {
-            tvCancel.setText(negativeName);
-        }
-
-        tvSubmit.setVisibility(isToShowPositiveButton ? View.VISIBLE : View.GONE);
-        tvCancel.setVisibility(isToShowNegitiveButton ? View.VISIBLE : View.GONE);
-        lineView.setVisibility(isToShowPositiveButton && isToShowNegitiveButton ? View.VISIBLE : View.GONE);
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        int id = v.getId();
-        if (id == R.id.cancel) {
-            this.dismiss();
-            if (listener != null) {
-                listener.onClick(false);
-            }
-        }
-        if (id == R.id.submit) {
-            this.dismiss();
-            if (listener != null) {
-                listener.onClick(true);
-            }
-        }
-
     }
 
     public interface OnDialogClickListener {
-        void onClick(boolean confirm);
+        void onClick();
     }
 }

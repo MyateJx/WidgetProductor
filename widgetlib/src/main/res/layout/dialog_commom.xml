@@ -33,44 +33,20 @@
         android:textSize="14sp"/>
 
     <View
+        android:id="@+id/line_above_btn_container"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:visibility="gone"
         android:background="@color/commom_background"/>
 
     <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/btn_container"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#00000000"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/cancel"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:layout_weight="1.0"
-            android:gravity="center"
-            android:text="@string/cancel"
-            android:textColor="@color/font_blue"
-            android:textSize="15sp"
-            android:visibility="gone"/>
-
-        <View
-            android:id="@+id/view_line"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/commom_background"
-            android:visibility="gone"/>
-
-        <TextView
-            android:id="@+id/submit"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:gravity="center"
-            android:text="@string/sure"
-            android:textColor="@color/font_blue"
-            android:textSize="15sp"/>
 
     </LinearLayout>
 

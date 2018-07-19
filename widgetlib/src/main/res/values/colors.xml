@@ -7,4 +7,6 @@
     <color name="font_common_2">#a1a1a1</color>
     <color name="font_blue">#42369a</color>
     <color name="commom_background">#f3f3f3</color>
+    <color name="transparent">#00000000</color> <!--透明-->
+
 </resources>
