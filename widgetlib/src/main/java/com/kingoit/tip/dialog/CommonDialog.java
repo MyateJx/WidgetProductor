@@ -58,8 +58,6 @@ public class CommonDialog extends Dialog {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_commom);
-//        setCancelable(false);
-//        setCanceledOnTouchOutside(false);
         initView();
     }
 
