@@ -11,7 +11,7 @@
 | 序号   | 功能块     | 提交人  | 更新时间       | 主要功能类  | 示例代码位置       |
 | :---: | :------: | :---: | :---------: | :--- | :----------- |
 |   1.1  | Tooltip | 许明君 | 2018-07-16 | **KingoitTooltip** | com.kingoit.widgetproductor.tip.TooltipActivity |
-|      |         |      |            |      |              |
+|  1.2   | Dialog |  许明君 | 2018-07-19 | **KingoitDialog** |  com.kingoit.tip.dialog.KingoitDialog |
 |      |         |      |            |      |              |
 |      |         |      |            |      |              |
 |      |         |      |            |      |              |
@@ -57,4 +57,13 @@
 
 ![Tooltip ](https://upload-images.jianshu.io/upload_images/57036-addbdd5ad22563cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+### 1.2、Dialog - 对话框
+作用：弹出对话框，可供用户选择或查看进度。
 
+期望：
+
+1. 可一键调用，可控制其外部点击关闭与否。
+2. 可调整字体大小、字体颜色、背景颜色。
+3. 可调用不同的选项模式、进度模式。
+
+![Dialog ](https://upload-images.jianshu.io/upload_images/57036-f89f1aa96f313a03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

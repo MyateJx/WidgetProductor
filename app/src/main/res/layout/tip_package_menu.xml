@@ -24,12 +24,20 @@
             android:text="1.1 Tooltip"/>
 
         <TextView
+            android:id="@+id/to_dialog"
+            style="@style/MainActivityTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->clickProxy.toDialog()}"
+            android:text="1.2 对话框"/>
+
+        <TextView
             android:id="@+id/to_toast"
             style="@style/MainActivityTextViewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="@{()->clickProxy.toToast()}"
-            android:text="1.2 Toast"/>
+            android:text="1.3 Toast"/>
 
         <TextView
             android:id="@+id/to_banner"
@@ -37,15 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="@{()->clickProxy.toBanner()}"
-            android:text="1.3 横幅提示"/>
-
-        <TextView
-            android:id="@+id/to_dialog"
-            style="@style/MainActivityTextViewStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="@{()->clickProxy.toDialog()}"
-            android:text="1.4 对话框"/>
+            android:text="1.4 横幅提示"/>
 
     </LinearLayout>
 
