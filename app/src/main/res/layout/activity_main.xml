@@ -15,33 +15,57 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvTitleTip"
-            style="@style/TitleTextViewStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="提示类"/>
+            <TextView
+                android:id="@+id/tvTitleTip"
+                style="@style/TitleTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提示类"/>
 
-        <include
-            android:id="@+id/include_tip"
-            layout="@layout/tip_package_menu"
-            app:clickProxy="@{clickProxy}"/>
+            <include
+                android:id="@+id/include_tip"
+                layout="@layout/tip_package_menu"
+                app:clickProxy="@{clickProxy}"/>
 
-        <TextView
-            android:id="@+id/tvTitleList"
-            style="@style/TitleTextViewStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="列表类"/>
+            <TextView
+                android:id="@+id/tvTitleList"
+                style="@style/TitleTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="列表类"/>
 
-        <include
-            android:id="@+id/include_list"
-            layout="@layout/list_package_menu"
-            app:clickProxy="@{clickProxy}"/>
+            <include
+                android:id="@+id/include_list"
+                layout="@layout/list_package_menu"
+                app:clickProxy="@{clickProxy}"/>
+
+            <TextView
+                android:id="@+id/tvTitleNavigation"
+                style="@style/TitleTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="导航类"/>
+
+            <include
+                android:id="@+id/include_navigation"
+                layout="@layout/navigation_package_menu"
+                app:clickProxy="@{clickProxy}"/>
+
+            <TextView
+                android:id="@+id/tvTitleShow"
+                style="@style/TitleTextViewStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="展示类"/>
+
+            <include
+                android:id="@+id/include_navigation"
+                layout="@layout/show_package_menu"
+                app:clickProxy="@{clickProxy}"/>
 
         </LinearLayout>
 

@@ -40,4 +40,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation deps.recyclerview_v7
     implementation(name: 'tooltips', ext: 'aar')
+    implementation deps.constraint_layout
 }

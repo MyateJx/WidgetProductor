@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import com.kingoit.widgetproductor.databinding.ActivityMainBinding;
 import com.kingoit.widgetproductor.list.FlowLayoutActivity;
 import com.kingoit.widgetproductor.list.SpinnerActivity;
+import com.kingoit.widgetproductor.navigation.HeadViewActivity;
+import com.kingoit.widgetproductor.show.MarqueeTextActivity;
 import com.kingoit.widgetproductor.tip.BannerActivity;
 import com.kingoit.widgetproductor.tip.DialogActivity;
 import com.kingoit.widgetproductor.tip.ToastActivity;
@@ -47,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
 
         public void toDialog() {
             startActivity(new Intent(MainActivity.this, DialogActivity.class));
+        }
+
+        public void toHeadView() {
+            startActivity(new Intent(MainActivity.this, HeadViewActivity.class));
+        }
+
+        public void toShowView() {
+            startActivity(new Intent(MainActivity.this, MarqueeTextActivity.class));
         }
     }
 

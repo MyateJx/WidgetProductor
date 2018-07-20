@@ -11,4 +11,27 @@
         <attr name="rightText" format="string"></attr>
     </declare-styleable>
 
+    <!--KingoitHeadView ，公用头部控件-->
+    <declare-styleable name="KingoitHeadView">
+        <!--左侧ImageView-->
+        <attr name="headLeftImgSrc" format="reference|integer"/>
+        <attr name="headLeftImgVisible" format="boolean" />
+        <!--左侧TextView-->
+        <attr name="headLeftText" format="string" />
+        <attr name="headLeftTextColor" format="color" />
+        <attr name="headLeftTextBackground" format="reference|integer" />
+        <!--标题TextView-->
+        <attr name="headTitleText" format="string" />
+        <attr name="headTitleTextColor" format="color" />
+        <attr name="headTitleTextVisible" format="boolean" />
+        <attr name="headTitleTextBackground" format="reference|integer" />
+        <!--右侧TextView-->
+        <attr name="headRightText" format="string" />
+        <attr name="headRightTextColor" format="color" />
+        <attr name="headRightTextBackground" format="reference|integer" />
+        <!--右侧ImageView-->
+        <attr name="headRightImgSrc" format="reference|integer"/>
+        <attr name="headRightImgVisible" format="boolean" />
+    </declare-styleable>
+
 </resources>

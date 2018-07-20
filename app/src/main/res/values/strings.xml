@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">widgetproductor</string>
     <string name="flow_layout_str">流式布局</string>
+    <string name="introduce">项目中用到一个横向滚动的TextView用来显示通知。  对美好的事物保持向往，平和的迎接每一天。</string>
 </resources>

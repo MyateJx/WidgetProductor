@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="clickProxy"
+            type="com.kingoit.widgetproductor.MainActivity.ClickProxy"/>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/to_flow_layout"
+            style="@style/MainActivityTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->clickProxy.toHeadView()}"
+            android:text="3.1 公用头部View"/>
+
+    </LinearLayout>
+
+
+</layout>

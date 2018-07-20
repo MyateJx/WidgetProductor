@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorDefaultTooltips">#FF4081</color>
-    <color name="colorWhite">#FFF</color>
-    <color name="colorBlack">#000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
     <color name="font_common_1">#424242</color>
     <color name="font_common_2">#a1a1a1</color>
     <color name="font_blue">#42369a</color>
     <color name="commom_background">#f3f3f3</color>
     <color name="transparent">#00000000</color> <!--透明-->
     <color name="com_app_theme_color">#718DF3</color>
+    <color name="holo_blue_dark">#62375ff1</color>
 
     <color name="colorDialogTitle">#455a64</color>
     <color name="colorDialogContent">#546e7a</color>
