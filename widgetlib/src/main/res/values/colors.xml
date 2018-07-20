@@ -14,4 +14,9 @@
     <color name="colorDialogTitle">#455a64</color>
     <color name="colorDialogContent">#546e7a</color>
     <color name="colorDialogButtonPressed">#c5cae9</color>
+
+    <color name="text_blue">#7198F2</color> <!-- 字体色蓝色 -->
+    <color name="gray">#ADADAD</color> <!-- 灰色 -->
+
+
 </resources>

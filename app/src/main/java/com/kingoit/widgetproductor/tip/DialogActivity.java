@@ -1,5 +1,6 @@
 package com.kingoit.widgetproductor.tip;
 
+import android.app.FragmentManager;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.databinding.DataBindingUtil;
@@ -8,6 +9,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Toast;
 
 import com.kingoit.tip.dialog.CommonDialog;
@@ -50,15 +52,11 @@ public class DialogActivity extends AppCompatActivity {
     };
 
     public class ClickProxy {
-        public void toHide() {
+        public void toSimpleDialog() {
 
         }
 
-        public void toShow() {
-            KingoitDialog.getCommonDialog(DialogActivity.this).setTitle("我是对话框标题").show();
-        }
-
-        public void toShowLeft() {
+        public void toCommonDialog() {
             KingoitDialog.getCommonDialog(DialogActivity.this)
                     .setTitle("我是对话框标题")
                     .setContent("回房间看速度快粉红色的肯恢复")
@@ -81,10 +79,13 @@ public class DialogActivity extends AppCompatActivity {
                         }
                     })
                     .show();
-
         }
 
-        public void toShowRight() {
+        public void toSimpleCommonDialog() {
+            KingoitDialog.getCommonDialog(DialogActivity.this).setTitle("我是对话框标题").show();
+        }
+
+        public void toProgressDialog() {
             mProgressDialog = KingoitDialog.showHorizontalProgressDialog(
                     DialogActivity.this, "标题啊", "消息啊", 0,
                     200, true, new DialogInterface.OnCancelListener() {
@@ -120,5 +121,4 @@ public class DialogActivity extends AppCompatActivity {
 
         }
     }
-
 }
