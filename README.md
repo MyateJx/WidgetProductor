@@ -65,5 +65,7 @@
 1. 可一键调用，可控制其外部点击关闭与否。
 2. 可调整字体大小、字体颜色、背景颜色。
 3. 可调用不同的选项模式、进度模式。
+4. 旋转屏幕等父窗口重置的情况，自身还能恢复。（todo）
+5. 可动态插入表单控件和回调。（todo）
 
 ![Dialog ](https://upload-images.jianshu.io/upload_images/57036-f89f1aa96f313a03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

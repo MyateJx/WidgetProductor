@@ -15,53 +15,53 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/btn_hide"
+            android:id="@+id/btn_simple_dialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:onClick="@{()->clickProxy.toHide()}"
+            android:onClick="@{()->clickProxy.toSimpleDialog()}"
             android:text="点我，隐藏它"/>
 
         <Button
-            android:id="@+id/btn_show"
+            android:id="@+id/btn_common_dialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_hide"
+            android:layout_below="@+id/btn_simple_dialog"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="12dp"
             android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp"
             android:layout_marginTop="60dp"
-            android:onClick="@{()->clickProxy.toShow()}"
+            android:onClick="@{()->clickProxy.toCommonDialog()}"
             android:text="点我，显示它"/>
 
         <Button
-            android:id="@+id/btn_show_left"
+            android:id="@+id/btn_simple_common"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_hide"
+            android:layout_below="@+id/btn_simple_dialog"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
-            android:layout_toLeftOf="@+id/btn_show"
-            android:onClick="@{()->clickProxy.toShowLeft()}"
+            android:layout_toLeftOf="@+id/btn_common_dialog"
+            android:onClick="@{()->clickProxy.toSimpleCommonDialog()}"
             android:text="点我，显示左边"/>
 
         <Button
-            android:id="@+id/btn_show_right"
+            android:id="@+id/btn_progress_dialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_hide"
+            android:layout_below="@+id/btn_simple_dialog"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
-            android:layout_toRightOf="@+id/btn_show"
-            android:onClick="@{()->clickProxy.toShowRight()}"
+            android:layout_toRightOf="@+id/btn_common_dialog"
+            android:onClick="@{()->clickProxy.toProgressDialog()}"
             android:text="点我，显示右边"/>
 
         <Button
             android:id="@+id/btn_show_bottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_show"
+            android:layout_below="@+id/btn_common_dialog"
             android:layout_centerHorizontal="true"
             android:onClick="@{()->clickProxy.toShowBottom()}"
             android:text="点我，显示底部"/>

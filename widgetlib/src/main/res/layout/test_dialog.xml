@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_round_white">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin8"
+        android:padding="@dimen/com_layout_padding"
+        android:textColor="@color/text_blue"
+        android:textSize="@dimen/com_textView_font_size_large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="title"/>
+
+    <View
+        android:id="@+id/title_divider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/margin8"
+        android:background="@color/text_blue"
+        app:layout_constraintBottom_toTopOf="@+id/message"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"/>
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/com_layout_margin"
+        android:padding="@dimen/com_layout_padding"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/com_textView_font_size"
+        app:layout_constraintBottom_toTopOf="@+id/content_divider"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_divider"
+        app:layout_constraintVertical_weight="1"
+        tools:text="message"/>
+
+    <ImageView
+        android:id="@+id/content_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toTopOf="@+id/btn_right"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message"/>
+
+    <ImageView
+        android:id="@+id/wire1"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/btn_left"
+        app:layout_constraintTop_toBottomOf="@id/content_divider"/>
+
+    <ImageView
+        android:id="@+id/wire2"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/btn_center"
+        app:layout_constraintTop_toBottomOf="@id/content_divider"/>
+
+    <TextView
+        android:id="@+id/btn_left"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/com_dialog_background_detail_bg"
+        android:gravity="center"
+        android:padding="@dimen/padding6"
+        android:textColor="@drawable/com_dialog_txt_bg"
+        android:textSize="@dimen/com_btn_font_size_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btn_center"
+        app:layout_constraintTop_toBottomOf="@+id/content_divider"
+        tools:text="left"/>
+
+    <TextView
+        android:id="@+id/btn_center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/com_dialog_background_detail_bg"
+        android:gravity="center"
+        android:padding="@dimen/padding6"
+        android:textColor="@drawable/com_dialog_txt_bg"
+        android:textSize="@dimen/com_btn_font_size_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/btn_left"
+        app:layout_constraintRight_toLeftOf="@+id/btn_right"
+        app:layout_constraintTop_toBottomOf="@+id/content_divider"
+        tools:text="center"/>
+
+    <TextView
+        android:id="@+id/btn_right"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/com_dialog_background_detail_bg"
+        android:gravity="center"
+        android:padding="@dimen/padding6"
+        android:textColor="@drawable/com_dialog_right_txt_bg"
+        android:textSize="@dimen/com_btn_font_size_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/btn_center"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/content_divider"
+        tools:text="right"/>
+
+</android.support.constraint.ConstraintLayout>
+
