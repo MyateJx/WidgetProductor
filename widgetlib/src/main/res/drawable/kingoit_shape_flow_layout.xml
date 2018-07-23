@@ -7,11 +7,11 @@ android:shape="rectangle">
     <!-- padding设置内容区域离边界的间距 -->
     <padding
         android:bottom="2dp"
-        android:left="8dp"
-        android:right="8dp"
+        android:left="4dp"
+        android:right="4dp"
         android:top="2dp" />
     <!-- corners设置圆角，只适用于rectangle -->
-    <corners android:radius="100dp" />
+    <corners android:radius="50dp" />
     <!-- stroke设置描边 -->
     <stroke
         android:width="2dp"

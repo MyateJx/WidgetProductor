@@ -1,12 +1,12 @@
 package com.kingoit.widgetproductor.navigation;
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.kingoit.list.spinner.SpinnerUtils;
 import com.kingoit.navigation.KingoitHeadView;
 import com.kingoit.widgetproductor.R;
 
@@ -19,7 +19,7 @@ import java.util.List;
  * @author zuo
  * @date 2018/7/20 11:59
  */
-public class HeadViewActivity extends AppCompatActivity implements SpinnerUtils.ItemClickListener{
+public class HeadViewActivity extends AppCompatActivity {
 
     private List<String> list = new ArrayList<>();
 
@@ -36,11 +36,18 @@ public class HeadViewActivity extends AppCompatActivity implements SpinnerUtils.
     }
 
 
+    @SuppressLint("ResourceAsColor")
     private void spinnerHeadView() {
         initData();
         KingoitHeadView headView1 = findViewById(R.id.head_view_1);
         final TextView headTitleTv = headView1.getHeadTitleTv();
-        new SpinnerUtils(this, headTitleTv, list, this);
+        //动态设置shape
+        GradientDrawable drawable = new GradientDrawable();
+        drawable.setCornerRadius(2);
+        drawable.setStroke(4, Color.parseColor("#3F51B5"));
+        drawable.setColor(Color.parseColor("#FFFFFF"));
+        headTitleTv.setBackground(drawable);
+//        new SpinnerUtils(this, headTitleTv, list, this);
     }
 
 
@@ -59,9 +66,9 @@ public class HeadViewActivity extends AppCompatActivity implements SpinnerUtils.
         list.add("永恒梦魇");
     }
 
-    @Override
+   /* @Override
     public void onItemClick(View view) {
         int tag = (int) view.getTag();
         Toast.makeText(getApplicationContext(), list.get(tag), Toast.LENGTH_SHORT).show();
-    }
+    }*/
 }

@@ -2,6 +2,8 @@ package com.kingoit.list.spinner;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,13 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kingoit.widgetlib.R;
 
-import java.util.List;
-
 /**
- * ArrayList<String> ,其中的string可以换成一个通用的实体，比如一个（int）id ,一个(string) value
+ * Spinner工具类
+ * <p>
  * author: zuo
  * date: 2017/11/29 15:05
  */
@@ -24,47 +26,54 @@ import java.util.List;
 public class SpinnerUtils {
     private Context mContext;
     private TextView mTextView;
-    private ItemClickListener itemClickListener;
-    private List<String> mData;
-    private RecyclerView.Adapter<RecyclerView.ViewHolder> mAdapter;
+    private BaseSpinnerAdapter mAdapter;
     private PopupWindow popupWindow;
+    private boolean noData;
+    @DrawableRes
+    private int mArrowDown = R.drawable.arrow_down;
+    @DrawableRes
+    private int mArrowUp = R.drawable.arrow_top;
 
-    public SpinnerUtils(Context context, TextView textView, List<String> data, ItemClickListener listener) {
+    public SpinnerUtils(Context context, TextView textView, @NonNull BaseSpinnerAdapter adapter) {
         this.mContext = context;
         this.mTextView = textView;
-        this.mData = data;
-        this.itemClickListener = listener;
-        initView();
+        this.mAdapter = adapter;
     }
-/*
-    public SpinnerUtils(Context context, TextView textView, List<String> data, ItemClickListener listener, RecyclerView.Adapter<RecyclerView.ViewHolder> adapter) {
-        this.mContext = context;
-        this.mTextView = textView;
-        this.mData = data;
-        this.itemClickListener = listener;
-        initView();
-    }*/
 
-    private void initView() {
-        if (mData != null && mData.size() > 0) {
-            mTextView.setText(mData.get(0));
-            tvSetImg(mTextView, R.drawable.arrow_down);
+    /**
+     * 设置箭头，如果不想使用系统的箭头图标，可以在这个方法中设置
+     * 需要注意的时，这个方法需要在初始化方法init()之前调用
+     * @param arrowDown
+     * @param arrowUp
+     */
+    public void setArrows(@DrawableRes int arrowDown, @DrawableRes int arrowUp) {
+        this.mArrowDown = arrowDown;
+        this.mArrowUp = arrowUp;
+    }
+
+    public void init() {
+        if (mAdapter != null && mAdapter.getData() != null && mAdapter.getData().size() > 0) {
+            mTextView.setText("----请选择---");
+            tvSetImg(mTextView, mArrowDown);
+            noData = false;
+        } else {
+            mTextView.setText("----无数据---");
+            noData = true;
         }
         mTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (noData) {
+                    Toast.makeText(mContext, "无数据!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 showPopupWindow();
             }
         });
     }
 
-
-    public interface ItemClickListener {
-        void onItemClick(View view);
-    }
-
     private void showPopupWindow() {
-        tvSetImg(mTextView, R.drawable.arrow_top);
+        tvSetImg(mTextView, mArrowUp);
         View view = LayoutInflater.from(mContext).inflate(R.layout.choose_pop_rv, null);
         popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
         popupWindow.setTouchable(true);
@@ -73,21 +82,17 @@ public class SpinnerUtils {
         popupWindow.setOnDismissListener(new PopupDismissListener());
         RecyclerView recyclerView = view.findViewById(R.id.rv_choose_pop);
         recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
-        mAdapter = new SpinnerChooseAdapter(mContext, new SpinnerChooseAdapter.MyItemClickListener() {
-            @Override
-            public void onItemClick(View view) {
-                int tag = (int) view.getTag();
-                mTextView.setText(mData.get(tag));
-                if (popupWindow != null) {
-                    popupWindow.dismiss();
-                }
-                if (itemClickListener != null) {
-                    itemClickListener.onItemClick(view);
-                }
-            }
-        }, mData);
         recyclerView.setAdapter(mAdapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(mContext, DividerItemDecoration.VERTICAL));
+    }
+
+    /**
+     * 关闭popupWindow
+     */
+    public void closeSpinner() {
+        if (popupWindow != null) {
+            popupWindow.dismiss();
+        }
     }
 
     /**
@@ -96,7 +101,7 @@ public class SpinnerUtils {
     class PopupDismissListener implements PopupWindow.OnDismissListener {
         @Override
         public void onDismiss() {
-            tvSetImg(mTextView, R.drawable.arrow_down);
+            tvSetImg(mTextView, mArrowDown);
         }
 
     }
@@ -113,27 +118,4 @@ public class SpinnerUtils {
         textView.setCompoundDrawables(null, null, nav_up, null);
     }
 
-    /**
-     * 基础数据类型，其他要传如的必须是它的子类
-     */
-    public class BaseSpinnerData {
-        private int key;
-        private String value;
-
-        public int getKey() {
-            return key;
-        }
-
-        public void setKey(int key) {
-            this.key = key;
-        }
-
-        public String getValue() {
-            return value;
-        }
-
-        public void setValue(String value) {
-            this.value = value;
-        }
-    }
 }

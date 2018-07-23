@@ -16,6 +16,7 @@
         <!--左侧ImageView-->
         <attr name="headLeftImgSrc" format="reference|integer"/>
         <attr name="headLeftImgVisible" format="boolean" />
+        <attr name="headLeftImgColor" format="color"/>
         <!--左侧TextView-->
         <attr name="headLeftText" format="string" />
         <attr name="headLeftTextColor" format="color" />
@@ -24,7 +25,6 @@
         <attr name="headTitleText" format="string" />
         <attr name="headTitleTextColor" format="color" />
         <attr name="headTitleTextVisible" format="boolean" />
-        <attr name="headTitleTextBackground" format="reference|integer" />
         <!--右侧TextView-->
         <attr name="headRightText" format="string" />
         <attr name="headRightTextColor" format="color" />
@@ -32,6 +32,18 @@
         <!--右侧ImageView-->
         <attr name="headRightImgSrc" format="reference|integer"/>
         <attr name="headRightImgVisible" format="boolean" />
+        <attr name="headRightImgColor" format="color"/>
+    </declare-styleable>
+
+    <!--KingoitFlowLayout ，流式布局属性设置-->
+    <declare-styleable name="KingoitFlowLayout">
+        <attr name="flowLayoutRadius" format="dimension"/>
+        <attr name="flowLayoutTextColor" format="color"/>
+        <attr name="flowLayoutTextSize" format="dimension"/>
+        <attr name="flowLayoutLineColor" format="color"/>
+        <attr name="flowLayoutLineWidth" format="dimension"/>
+        <attr name="flowLayoutBackgroundColor" format="color"/>
+        <attr name="flowLayoutDeleteBtnColor" format="color"/>
     </declare-styleable>
 
 </resources>

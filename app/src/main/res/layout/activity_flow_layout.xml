@@ -1,26 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorWhite"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
     tools:context="com.kingoit.widgetproductor.list.FlowLayoutActivity">
 
-    <TextView
+    <com.kingoit.navigation.KingoitHeadView
+        android:id="@+id/head_view"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="@string/flow_layout_str"
-        android:textColor="@color/colorWhite"
-        android:textSize="16sp"
-        android:gravity="center"
-        android:background="@color/colorBgTagClass"/>
+        android:layout_height="45dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/com_app_theme_color"
+        app:headLeftImgColor="@color/colorWhite"
+        app:headLeftImgSrc="@drawable/arrow_left"
+        app:headRightImgColor="@color/colorWhite"
+        app:headRightImgSrc="@drawable/delete"
+        app:headTitleText="流式布局"
+        app:headTitleTextColor="@color/colorWhite"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <com.kingoit.list.flowLayout.KingoitFlowLayout
         android:id="@+id/kingoit_flow_layout"
-        android:paddingTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        app:flowLayoutBackgroundColor="@color/colorWhite"
+        app:flowLayoutDeleteBtnColor="@color/colorPrimary"
+        app:flowLayoutLineColor="@color/colorBlack"
+        app:flowLayoutLineWidth="1dp"
+        app:flowLayoutRadius="50dp"
+        app:flowLayoutTextColor="@color/colorBlackText"/>
 
 </LinearLayout>

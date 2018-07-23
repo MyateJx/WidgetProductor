@@ -5,13 +5,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.kingoit.list.spinnerview.KingoitItemView
-        android:id="@+id/test"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:gravity="center_vertical"
+        android:background="@color/colorBgTag"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/colorWhite"
-        app:leftText="qqq"
-        app:rightText="www"
-        app:viewType="SpinnerStyle" />
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="Spinner展示："
+            android:textSize="16sp"
+            android:textColor="@color/colorBlack"/>
+
+        <TextView
+            android:id="@+id/show_spinner"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="@color/colorAccent"
+            android:background="@drawable/shape_popup_view"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
 
 </LinearLayout>

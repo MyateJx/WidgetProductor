@@ -2,8 +2,10 @@ package com.kingoit.navigation;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -55,12 +57,15 @@ public class KingoitHeadView extends FrameLayout {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.KingoitHeadView);
         headLeftImg.setImageResource(typedArray.getResourceId(R.styleable.KingoitHeadView_headLeftImgSrc, R.drawable.arrow_left));
         headLeftImg.setVisibility(typedArray.getBoolean(R.styleable.KingoitHeadView_headLeftImgVisible, true) ? View.VISIBLE : View.GONE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            headLeftImg.setImageTintList(ColorStateList.valueOf(typedArray.getColor(R.styleable.KingoitHeadView_headLeftImgColor, Color.LTGRAY)));
+            headRightImg.setImageTintList(ColorStateList.valueOf(typedArray.getColor(R.styleable.KingoitHeadView_headRightImgColor, Color.LTGRAY)));
+        }
         headLeftTv.setText(typedArray.getString(R.styleable.KingoitHeadView_headLeftText));
         headLeftTv.setTextColor(typedArray.getColor(R.styleable.KingoitHeadView_headLeftTextColor, Color.BLACK));
         headLeftTv.setBackgroundResource(typedArray.getResourceId(R.styleable.KingoitHeadView_headLeftTextBackground, R.color.colorWhite));
         headTitleTv.setText(typedArray.getString(R.styleable.KingoitHeadView_headTitleText));
         headTitleTv.setTextColor(typedArray.getColor(R.styleable.KingoitHeadView_headTitleTextColor, Color.BLACK));
-        headTitleTv.setBackgroundResource(typedArray.getResourceId(R.styleable.KingoitHeadView_headTitleTextBackground, R.color.colorWhite));
         headTitleTv.setVisibility(typedArray.getBoolean(R.styleable.KingoitHeadView_headTitleTextVisible, true) ? View.VISIBLE : View.GONE);
         headRightTv.setText(typedArray.getString(R.styleable.KingoitHeadView_headRightText));
         headRightTv.setTextColor(typedArray.getColor(R.styleable.KingoitHeadView_headRightTextColor, Color.BLACK));

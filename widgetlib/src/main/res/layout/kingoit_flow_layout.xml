@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:orientation="vertical"
-              android:paddingBottom="10dp"
-              android:paddingEnd="10dp"
-              android:paddingRight="10dp"
-              tools:ignore="RtlSymmetry">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:paddingBottom="@dimen/margin5"
+    android:paddingEnd="@dimen/margin5"
+    android:paddingRight="@dimen/margin10"
+    tools:ignore="RtlSymmetry">
 
     <TextView
         android:id="@+id/value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/kingoit_shape_flow_layout"
         android:ellipsize="end"
         android:gravity="center"
         android:lines="1"
@@ -22,4 +22,18 @@
         android:textColor="#000000"
         android:textSize="16sp"/>
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/value"
+        android:layout_alignEnd="@id/value"
+        android:layout_alignRight="@id/value"
+        android:layout_alignTop="@+id/value"
+        android:layout_marginEnd="-2dp"
+        android:layout_marginRight="-2dp"
+        android:src="@drawable/cancel"
+        android:tint="@color/colorDialogContent"
+        android:visibility="gone"/>
+
+</RelativeLayout>

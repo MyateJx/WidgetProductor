@@ -2,11 +2,11 @@ package com.kingoit.widgetproductor.list;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
 import com.kingoit.list.flowLayout.KingoitFlowLayout;
+import com.kingoit.navigation.KingoitHeadView;
 import com.kingoit.widgetproductor.R;
 
 import java.util.ArrayList;
@@ -18,20 +18,23 @@ import java.util.List;
  * @author zuo
  * @date 2018/7/16 12:27
  */
-public class FlowLayoutActivity extends AppCompatActivity {
+public class FlowLayoutActivity extends AppCompatActivity implements KingoitFlowLayout.ItemClickListener {
 
     private KingoitFlowLayout flowLayout;
+    private KingoitHeadView headView;
+    private List<String> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flow_layout);
+        headView = findViewById(R.id.head_view);
         flowLayout = findViewById(R.id.kingoit_flow_layout);
         initData();
+        initView();
     }
 
     private void initData() {
-        List<String> list = new ArrayList<>();
         list.add("战争女神");
         list.add("蒙多");
         list.add("德玛西亚皇子");
@@ -44,24 +47,21 @@ public class FlowLayoutActivity extends AppCompatActivity {
         list.add("赛恩");
         list.add("诡术妖姬");
         list.add("永恒梦魇");
-        showTag(list);
     }
 
-    /**
-     * 流式布局显示
-     * @param list
-     */
-    private void showTag(List<String> list) {
-        flowLayout.removeAllViews();
-        for (int i = 0; i < list.size(); i++) {
-            final String keywords = list.get(i);
-            flowLayout.addItemView(LayoutInflater.from(this),keywords);
-            flowLayout.getChildAt(i).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(FlowLayoutActivity.this,keywords,Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+    private void initView() {
+        headView.getHeadRightImg().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flowLayout.setDeleteMode(!flowLayout.isDeleteMode());
+                flowLayout.showTag(list,FlowLayoutActivity.this);
+            }
+        });
+        flowLayout.showTag(list,FlowLayoutActivity.this);
+    }
+
+    @Override
+    public void onClick(String keywords) {
+        Toast.makeText(FlowLayoutActivity.this, keywords, Toast.LENGTH_SHORT).show();
     }
 }
