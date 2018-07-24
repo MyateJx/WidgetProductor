@@ -44,7 +44,7 @@
 4. 旋转屏幕等父窗口重置的情况，自身还能恢复。（todo）
 5. 可动态插入表单控件和回调。（todo）
 
-![Dialog ](https://upload-images.jianshu.io/upload_images/57036-f89f1aa96f313a03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Dialog ](https://upload-images.jianshu.io/upload_images/57036-223bd881770a068b.gif?imageMogr2/auto-orient/strip)
 
 -------------------
 
