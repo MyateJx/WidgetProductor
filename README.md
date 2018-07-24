@@ -31,7 +31,7 @@
 2. 可调整提示的字体大小、字体颜色、背景颜色。
 3. 可设置在屏幕中的方位，上、下、左、右。
 
-![Tooltip ](https://upload-images.jianshu.io/upload_images/57036-addbdd5ad22563cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Tooltip ](https://upload-images.jianshu.io/upload_images/57036-e50fd8e32fcd3139.gif?imageMogr2/auto-orient/strip)
 
 ### 1.2、Dialog - 对话框
 作用：弹出对话框，可供用户选择或查看进度。
