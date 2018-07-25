@@ -1,40 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
-    android:orientation="vertical"
     tools:context="com.kingoit.widgetproductor.list.FlowLayoutActivity">
 
-    <com.kingoit.navigation.KingoitHeadView
-        android:id="@+id/head_view"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/com_app_theme_color"
-        app:headLeftImgColor="@color/colorWhite"
-        app:headLeftImgSrc="@drawable/arrow_left"
-        app:headRightImgColor="@color/colorWhite"
-        app:headRightImgSrc="@drawable/delete"
-        app:headTitleText="流式布局"
-        app:headTitleTextColor="@color/colorWhite"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:background="@color/light_blue_500"
+        android:elevation="4dp">
 
-    <com.kingoit.list.flowLayout.KingoitFlowLayout
-        android:id="@+id/kingoit_flow_layout"
+        <com.kingoit.navigation.KingoitHeadView
+            android:id="@+id/head_view"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/light_blue_500"
+            app:headLeftImgColor="@color/colorWhite"
+            app:headLeftImgSrc="@drawable/arrow_left"
+            app:headRightImgColor="@color/colorWhite"
+            app:headRightImgSrc="@drawable/delete"
+            app:headRightText="展开"
+            app:headTitleText="流式布局"
+            app:headTitleTextColor="@color/colorWhite"/>
+
+        <com.kingoit.list.flowLayout.KingoitFlowLayout
+            android:id="@+id/kingoit_flow_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_blue_500"
+            android:padding="12dp"
+            app:flowLayoutBackgroundColor="@color/light_blue_700"
+            app:flowLayoutDeleteBtnColor="@color/colorPrimary"
+            app:flowLayoutLineColor="@color/light_blue_700"
+            app:flowLayoutLineWidth="1dp"
+            app:flowLayoutRadius="50dp"
+            app:flowLayoutTextColor="@color/colorWhite"
+            app:flowLayoutTextSize="14dp"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="10dp"
-        app:flowLayoutBackgroundColor="@color/colorWhite"
-        app:flowLayoutDeleteBtnColor="@color/colorPrimary"
-        app:flowLayoutLineColor="@color/colorBlack"
-        app:flowLayoutLineWidth="1dp"
-        app:flowLayoutRadius="50dp"
-        app:flowLayoutTextColor="@color/colorBlackText"/>
+        android:layout_height="match_parent"/>
 
-</LinearLayout>
+</RelativeLayout>

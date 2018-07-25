@@ -54,10 +54,16 @@ public class FlowLayoutActivity extends AppCompatActivity implements KingoitFlow
             @Override
             public void onClick(View v) {
                 flowLayout.setDeleteMode(!flowLayout.isDeleteMode());
-                flowLayout.showTag(list,FlowLayoutActivity.this);
+                flowLayout.showTag(list, FlowLayoutActivity.this);
             }
         });
-        flowLayout.showTag(list,FlowLayoutActivity.this);
+        headView.getHeadRightTv().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flowLayout.setVisibility(flowLayout.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
+            }
+        });
+        flowLayout.showTag(list, FlowLayoutActivity.this);
     }
 
     @Override
