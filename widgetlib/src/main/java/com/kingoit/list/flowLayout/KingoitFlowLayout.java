@@ -73,6 +73,7 @@ public class KingoitFlowLayout extends ViewGroup {
 
     /**
      * 流式布局属性设置
+     *
      * @param context
      * @param attrs
      */
@@ -80,11 +81,11 @@ public class KingoitFlowLayout extends ViewGroup {
     private void initAttributes(Context context, AttributeSet attrs) {
         @SuppressLint("Recycle")
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.KingoitFlowLayout);
-        textSize = typedArray.getDimension(R.styleable.KingoitFlowLayout_flowLayoutTextSize, 16f);
+        textSize = typedArray.getDimension(R.styleable.KingoitFlowLayout_flowLayoutTextSize, 16);
         textColor = typedArray.getColor(R.styleable.KingoitFlowLayout_flowLayoutTextColor, Color.parseColor("#FF4081"));
         shapeRadius = typedArray.getDimension(R.styleable.KingoitFlowLayout_flowLayoutRadius, 40f);
-        shapeLineColor = typedArray.getColor(R.styleable.KingoitFlowLayout_flowLayoutLineColor,Color.parseColor("#ADADAD"));
-        shapeBackgroundColor = typedArray.getColor(R.styleable.KingoitFlowLayout_flowLayoutBackgroundColor,Color.parseColor("#c5cae9"));
+        shapeLineColor = typedArray.getColor(R.styleable.KingoitFlowLayout_flowLayoutLineColor, Color.parseColor("#ADADAD"));
+        shapeBackgroundColor = typedArray.getColor(R.styleable.KingoitFlowLayout_flowLayoutBackgroundColor, Color.parseColor("#c5cae9"));
         shapeLineWidth = typedArray.getDimension(R.styleable.KingoitFlowLayout_flowLayoutLineWidth, 4f);
         deleteBtnColor = typedArray.getColor(R.styleable.KingoitFlowLayout_flowLayoutDeleteBtnColor, Color.GRAY);
     }
@@ -186,23 +187,23 @@ public class KingoitFlowLayout extends ViewGroup {
         //加载 ItemView并设置名称，并设置名称
         View view = inflater.inflate(R.layout.kingoit_flow_layout, this, false);
         ImageView delete = view.findViewById(R.id.delete);
-        if (isDeleteMode){
+        if (isDeleteMode) {
             delete.setVisibility(VISIBLE);
-        }else {
+        } else {
             delete.setVisibility(GONE);
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             delete.setImageTintList(ColorStateList.valueOf(deleteBtnColor));
         }
         TextView textView = view.findViewById(R.id.value);
-        textView.setTextSize(textSize);
+        textView.setTextSize((textSize / getContext().getResources().getDisplayMetrics().scaledDensity));
         textView.setTextColor(textColor);
-        textView.setPadding(20,4,20,4);
+        textView.setPadding(20, 4, 20, 4);
         textView.setText(tvName);
         //动态设置shape
         GradientDrawable drawable = new GradientDrawable();
         drawable.setCornerRadius(shapeRadius);
-        drawable.setStroke((int)shapeLineWidth, shapeLineColor);
+        drawable.setStroke((int) shapeLineWidth, shapeLineColor);
         drawable.setColor(shapeBackgroundColor);
         textView.setBackgroundDrawable(drawable);
 
@@ -222,6 +223,7 @@ public class KingoitFlowLayout extends ViewGroup {
     /**
      * 流式布局显示
      * Toast.makeText(FlowLayoutActivity.this, keywords, Toast.LENGTH_SHORT).show();
+     *
      * @param list
      */
     public void showTag(final List<String> list, final ItemClickListener listener) {
@@ -232,10 +234,10 @@ public class KingoitFlowLayout extends ViewGroup {
             getChildAt(i).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (isDeleteMode()){
+                    if (isDeleteMode()) {
                         list.remove(keywords);
-                        showTag(list,listener);
-                    }else {
+                        showTag(list, listener);
+                    } else {
                         listener.onClick(keywords);
                     }
                 }
@@ -243,9 +245,10 @@ public class KingoitFlowLayout extends ViewGroup {
         }
     }
 
-    public interface ItemClickListener{
+    public interface ItemClickListener {
         /**
          * item 点击事件
+         *
          * @param keywords
          */
         void onClick(String keywords);

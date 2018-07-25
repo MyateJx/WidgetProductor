@@ -40,7 +40,7 @@
             app:flowLayoutLineWidth="1dp"
             app:flowLayoutRadius="50dp"
             app:flowLayoutTextColor="@color/colorWhite"
-            app:flowLayoutTextSize="14dp"/>
+            app:flowLayoutTextSize="16sp"/>
 
     </android.support.design.widget.AppBarLayout>
 
