@@ -37,10 +37,10 @@
             app:flowLayoutBackgroundColor="@color/light_blue_700"
             app:flowLayoutBackgroundColorSelector="@drawable/selector_flowlayout_item_bg"
             app:flowLayoutDeleteBtnColor="@color/colorPrimary"
-            app:flowLayoutLineColor="@color/light_blue_700"
+            app:flowLayoutLineColor="@color/transation"
             app:flowLayoutLineWidth="1dp"
             app:flowLayoutRadius="50dp"
-            app:flowLayoutTextColor="@color/colorWhite"
+            app:flowLayoutTextColor="@color/light_blue_50"
             app:flowLayoutTextColorSelector="@drawable/selector_flowlayout_item_text_color"
             app:flowLayoutTextSize="16sp"/>
 

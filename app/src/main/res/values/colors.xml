@@ -8,6 +8,7 @@
     <color name="colorBlack">#000000</color>
     <color name="colorBlackText">#ec363636</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="transation">#00FFFFFF</color>
 
     <color name="light_blue_50">#e1f5fe</color>
     <color name="light_blue_100">#b3e5fc</color>
