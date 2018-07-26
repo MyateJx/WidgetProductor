@@ -30,15 +30,21 @@ public class KingoitFlowLayout extends ViewGroup {
     private List<ChildPos> mChildPos = new ArrayList<ChildPos>();
     private float textSize;
     private int textColor;
+    private int textColorSelector;
     private float shapeRadius;
     private int shapeLineColor;
     private int shapeBackgroundColor;
+    private int shapeBackgroundColorSelector;
     private float shapeLineWidth;
     private int deleteBtnColor;
     /**
      * 是否是可删除模式
      */
     private boolean isDeleteMode;
+    /**
+     * 记录所有选中着的词
+     */
+    private List<String> mAllSelectedWords = new ArrayList<>();
 
     private class ChildPos {
         int left, top, right, bottom;
@@ -83,9 +89,11 @@ public class KingoitFlowLayout extends ViewGroup {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.KingoitFlowLayout);
         textSize = typedArray.getDimension(R.styleable.KingoitFlowLayout_flowLayoutTextSize, 16);
         textColor = typedArray.getColor(R.styleable.KingoitFlowLayout_flowLayoutTextColor, Color.parseColor("#FF4081"));
+        textColorSelector = typedArray.getResourceId(R.styleable.KingoitFlowLayout_flowLayoutTextColorSelector, 0);
         shapeRadius = typedArray.getDimension(R.styleable.KingoitFlowLayout_flowLayoutRadius, 40f);
         shapeLineColor = typedArray.getColor(R.styleable.KingoitFlowLayout_flowLayoutLineColor, Color.parseColor("#ADADAD"));
         shapeBackgroundColor = typedArray.getColor(R.styleable.KingoitFlowLayout_flowLayoutBackgroundColor, Color.parseColor("#c5cae9"));
+        shapeBackgroundColorSelector = typedArray.getResourceId(R.styleable.KingoitFlowLayout_flowLayoutBackgroundColorSelector, 0);
         shapeLineWidth = typedArray.getDimension(R.styleable.KingoitFlowLayout_flowLayoutLineWidth, 4f);
         deleteBtnColor = typedArray.getColor(R.styleable.KingoitFlowLayout_flowLayoutDeleteBtnColor, Color.GRAY);
     }
@@ -197,14 +205,24 @@ public class KingoitFlowLayout extends ViewGroup {
         }
         TextView textView = view.findViewById(R.id.value);
         textView.setTextSize((textSize / getContext().getResources().getDisplayMetrics().scaledDensity));
-        textView.setTextColor(textColor);
+        if (textColorSelector != 0) {
+            ColorStateList csl = getResources().getColorStateList(textColorSelector);
+            textView.setTextColor(csl);
+        } else {
+            textView.setTextColor(textColor);
+        }
         textView.setPadding(20, 4, 20, 4);
         textView.setText(tvName);
         //动态设置shape
         GradientDrawable drawable = new GradientDrawable();
         drawable.setCornerRadius(shapeRadius);
         drawable.setStroke((int) shapeLineWidth, shapeLineColor);
-        drawable.setColor(shapeBackgroundColor);
+        if (shapeBackgroundColorSelector != 0) {
+            ColorStateList csl = getResources().getColorStateList(shapeBackgroundColorSelector);
+            drawable.setColor(csl);
+        } else {
+            drawable.setColor(shapeBackgroundColor);
+        }
         textView.setBackgroundDrawable(drawable);
 
         //把 ItemView加入流式布局
@@ -231,14 +249,22 @@ public class KingoitFlowLayout extends ViewGroup {
         for (int i = 0; i < list.size(); i++) {
             final String keywords = list.get(i);
             addItemView(LayoutInflater.from(getContext()), keywords);
-            getChildAt(i).setOnClickListener(new View.OnClickListener() {
+            final int finalI = i;
+            getChildAt(i).setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (isDeleteMode()) {
                         list.remove(keywords);
                         showTag(list, listener);
                     } else {
-                        listener.onClick(keywords);
+                        View child = getChildAt(finalI);
+                        child.setSelected(!child.isSelected());
+                        if (child.isSelected()) {
+                            mAllSelectedWords.add(list.get(finalI));
+                        } else {
+                            mAllSelectedWords.remove(list.get(finalI));
+                        }
+                        listener.onClick(keywords, mAllSelectedWords);
                     }
                 }
             });
@@ -249,8 +275,9 @@ public class KingoitFlowLayout extends ViewGroup {
         /**
          * item 点击事件
          *
-         * @param keywords
+         * @param currentSelectedkeywords
+         * @param allSelectedKeywords
          */
-        void onClick(String keywords);
+        void onClick(String currentSelectedkeywords, List<String> allSelectedKeywords);
     }
 }

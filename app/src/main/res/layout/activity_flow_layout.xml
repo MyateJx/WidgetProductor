@@ -35,11 +35,13 @@
             android:background="@color/light_blue_500"
             android:padding="12dp"
             app:flowLayoutBackgroundColor="@color/light_blue_700"
+            app:flowLayoutBackgroundColorSelector="@drawable/selector_flowlayout_item_bg"
             app:flowLayoutDeleteBtnColor="@color/colorPrimary"
             app:flowLayoutLineColor="@color/light_blue_700"
             app:flowLayoutLineWidth="1dp"
             app:flowLayoutRadius="50dp"
             app:flowLayoutTextColor="@color/colorWhite"
+            app:flowLayoutTextColorSelector="@drawable/selector_flowlayout_item_text_color"
             app:flowLayoutTextSize="16sp"/>
 
     </android.support.design.widget.AppBarLayout>

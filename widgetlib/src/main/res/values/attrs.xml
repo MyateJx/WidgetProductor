@@ -15,23 +15,23 @@
     <declare-styleable name="KingoitHeadView">
         <!--左侧ImageView-->
         <attr name="headLeftImgSrc" format="reference|integer"/>
-        <attr name="headLeftImgVisible" format="boolean" />
+        <attr name="headLeftImgVisible" format="boolean"/>
         <attr name="headLeftImgColor" format="color"/>
         <!--左侧TextView-->
-        <attr name="headLeftText" format="string" />
-        <attr name="headLeftTextColor" format="color" />
-        <attr name="headLeftTextBackground" format="reference|integer" />
+        <attr name="headLeftText" format="string"/>
+        <attr name="headLeftTextColor" format="color"/>
+        <attr name="headLeftTextBackground" format="reference|integer"/>
         <!--标题TextView-->
-        <attr name="headTitleText" format="string" />
-        <attr name="headTitleTextColor" format="color" />
-        <attr name="headTitleTextVisible" format="boolean" />
+        <attr name="headTitleText" format="string"/>
+        <attr name="headTitleTextColor" format="color"/>
+        <attr name="headTitleTextVisible" format="boolean"/>
         <!--右侧TextView-->
-        <attr name="headRightText" format="string" />
-        <attr name="headRightTextColor" format="color" />
-        <attr name="headRightTextBackground" format="reference|integer" />
+        <attr name="headRightText" format="string"/>
+        <attr name="headRightTextColor" format="color"/>
+        <attr name="headRightTextBackground" format="reference|integer"/>
         <!--右侧ImageView-->
         <attr name="headRightImgSrc" format="reference|integer"/>
-        <attr name="headRightImgVisible" format="boolean" />
+        <attr name="headRightImgVisible" format="boolean"/>
         <attr name="headRightImgColor" format="color"/>
     </declare-styleable>
 
@@ -39,11 +39,28 @@
     <declare-styleable name="KingoitFlowLayout">
         <attr name="flowLayoutRadius" format="dimension"/>
         <attr name="flowLayoutTextColor" format="color"/>
+        <attr name="flowLayoutTextColorSelector" format="color"/>
         <attr name="flowLayoutTextSize" format="dimension"/>
         <attr name="flowLayoutLineColor" format="color"/>
         <attr name="flowLayoutLineWidth" format="dimension"/>
         <attr name="flowLayoutBackgroundColor" format="color"/>
+        <attr name="flowLayoutBackgroundColorSelector" format="color"/>
         <attr name="flowLayoutDeleteBtnColor" format="color"/>
+    </declare-styleable>
+
+    <!-- kingoitSvgView的属性 -->
+    <declare-styleable name="KingoitAnimatedSvgView">
+        <attr name="animatedSvgImageSizeX" format="integer"/>
+        <attr name="animatedSvgImageSizeY" format="integer"/>
+        <attr name="animatedSvgTraceTime" format="string"/>
+        <attr name="animatedSvgTraceTimePerGlyph" format="string"/>
+        <attr name="animatedSvgFillStart" format="string"/>
+        <attr name="animatedSvgFillTime" format="string"/>
+        <attr name="animatedSvgGlyphStrings" format="reference"/>
+        <attr name="animatedSvgTraceColors" format="reference"/>
+        <attr name="animatedSvgTraceResidueColors" format="reference"/>
+        <attr name="animatedSvgTraceMarkerLength" format="integer"/>
+        <attr name="animatedSvgFillColors" format="reference"/>
     </declare-styleable>
 
 </resources>

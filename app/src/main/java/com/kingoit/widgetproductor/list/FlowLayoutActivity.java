@@ -66,8 +66,9 @@ public class FlowLayoutActivity extends AppCompatActivity implements KingoitFlow
         flowLayout.showTag(list, FlowLayoutActivity.this);
     }
 
+
     @Override
-    public void onClick(String keywords) {
-        Toast.makeText(FlowLayoutActivity.this, keywords, Toast.LENGTH_SHORT).show();
+    public void onClick(String currentSelectedkeywords, List<String> allSelectedKeywords) {
+        Toast.makeText(FlowLayoutActivity.this, currentSelectedkeywords, Toast.LENGTH_SHORT).show();
     }
 }

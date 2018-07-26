@@ -4,6 +4,8 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
+import android.widget.Toast;
 
 import com.kingoit.widgetproductor.R;
 import com.kingoit.widgetproductor.databinding.ActivityToastBinding;
@@ -23,11 +25,22 @@ public class ToastActivity extends AppCompatActivity {
         mBinding.setClickProxy(new ClickProxy());
     }
 
+    private Toast mToast;
+    private int index = 0;
+
     public class ClickProxy {
         public void toShowTop() {
+            if (mToast == null) {
+                mToast = Toast.makeText(getApplicationContext(), "xx", Toast.LENGTH_SHORT);
+            }
+            index++;
+            mToast.setText("" + index);
+            mToast.setGravity(Gravity.TOP, 0, 0);
+            mToast.show();
         }
 
         public void toShowCenter() {
+            mToast.cancel();
         }
 
         public void toShowBottom() {
