@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,9 @@ public class SpinnerUtils {
     @DrawableRes
     private int mArrowUp = R.drawable.arrow_top;
 
+    private int[] location = new int[2];
+
+
     public SpinnerUtils(Context context, TextView textView, @NonNull BaseSpinnerAdapter adapter) {
         this.mContext = context;
         this.mTextView = textView;
@@ -43,6 +47,7 @@ public class SpinnerUtils {
     /**
      * 设置箭头，如果不想使用系统的箭头图标，可以在这个方法中设置
      * 需要注意的时，这个方法需要在初始化方法init()之前调用
+     *
      * @param arrowDown
      * @param arrowUp
      */
@@ -74,16 +79,23 @@ public class SpinnerUtils {
 
     private void showPopupWindow() {
         tvSetImg(mTextView, mArrowUp);
-        View view = LayoutInflater.from(mContext).inflate(R.layout.choose_pop_rv, null);
-        popupWindow = new PopupWindow(view, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
+        View conentView = LayoutInflater.from(mContext).inflate(R.layout.choose_pop_rv, null);
+        popupWindow = new PopupWindow(conentView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
         popupWindow.setTouchable(true);
         popupWindow.setBackgroundDrawable(mContext.getResources().getDrawable(R.drawable.shape_popup_view));
-        popupWindow.showAsDropDown(mTextView);
         popupWindow.setOnDismissListener(new PopupDismissListener());
-        RecyclerView recyclerView = view.findViewById(R.id.rv_choose_pop);
+        RecyclerView recyclerView = conentView.findViewById(R.id.rv_choose_pop);
         recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
         recyclerView.setAdapter(mAdapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(mContext, DividerItemDecoration.VERTICAL));
+        mTextView.getLocationOnScreen(location);
+        //获取自身的长宽高
+        conentView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+        if (location[1] > mContext.getResources().getDisplayMetrics().heightPixels / 2 + 100) {
+            popupWindow.showAtLocation(mTextView, Gravity.NO_GRAVITY, (location[0]), location[1] - conentView.getMeasuredHeight());
+        } else {
+            popupWindow.showAsDropDown(mTextView);
+        }
     }
 
     /**

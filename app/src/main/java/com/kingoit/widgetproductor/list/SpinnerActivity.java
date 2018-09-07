@@ -33,7 +33,6 @@ public class SpinnerActivity extends AppCompatActivity implements BaseSpinnerAda
 
     private void initView() {
         textView = findViewById(R.id.show_spinner);
-//        SpinnerChooseAdapter chooseAdapter = new SpinnerChooseAdapter(this, list, this);
         SpinnerUserChooseAdapter chooseAdapter = new SpinnerUserChooseAdapter(this, list, this);
         spinnerUtils = new SpinnerUtils(this, textView, chooseAdapter);
         spinnerUtils.setArrows(R.drawable.arrow_down_app,R.drawable.arrow_up_app);
