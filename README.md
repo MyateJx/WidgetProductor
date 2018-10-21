@@ -11,8 +11,8 @@
 
 | 序号   | 功能块     | 提交人  | 更新时间       | 主要功能类  | 示例代码位置       |
 | :---: | :------: | :---: | :---------: | :--- | :----------- |
-|   1.1  | Tooltip | 许明君 | 2018-07-16 | **KingoitTooltip** | com.kingoit.widgetproductor.tip.TooltipActivity |
-|  1.2   | Dialog |  许明君 | 2018-07-19 | **KingoitDialog** |  com.kingoit.tip.dialog.KingoitDialog |
+|   1.1  | Tooltip | MyateJx | 2018-07-16 | **KingoitTooltip** | com.kingoit.widgetproductor.tip.TooltipActivity |
+|  1.2   | Dialog |  MyateJx | 2018-07-19 | **KingoitDialog** |  com.kingoit.tip.dialog.KingoitDialog |
 |      |         |      |            |      |              |
 |      |         |      |            |      |              |
 |      |         |      |            |      |              |
@@ -52,8 +52,8 @@
 
 |  序号 |  功能块  | 提交人| 更新时间    | 主要功能类   | 示例代码位置   |
 | :---: | :------: | :---: | :---------: | :--- | :----------- |
-|   2.1  |  流式布局 | 左志杰| 2018-07-16 | **KingoitFlowLayout** |com.kingoit.widgetproductor.list.FlowLayoutActivity |
-|   2.2  | Spinner |左志杰| 2018-07-23 | **SpinnerUtils**|com.kingoit.widgetproductor.list.SpinnerActivity |
+|   2.1  |  流式布局 | zuo123| 2018-07-16 | **KingoitFlowLayout** |com.kingoit.widgetproductor.list.FlowLayoutActivity |
+|   2.2  | Spinner |zuo123| 2018-07-23 | **SpinnerUtils**|com.kingoit.widgetproductor.list.SpinnerActivity |
 |      |         |      |            |      |              |
 |      |         |      |            |      |              |
 |      |         |      |            |      |              |
@@ -94,7 +94,7 @@
 
 |  序号 |  功能块  | 提交人| 更新时间    | 主要功能类   | 示例代码位置   |
 | :---: | :------: | :---: | :---------: | :--- | :----------- |
-|   3.1  |  公用HeadView | 左志杰| 2018-07-23 | **KingoitHeadView** |com.kingoit.widgetproductor.navigation.HeadViewActivity|
+|   3.1  |  公用HeadView | zuo123| 2018-07-23 | **KingoitHeadView** |com.kingoit.widgetproductor.navigation.HeadViewActivity|
 |      |         |      |            |      |              |
 |      |         |      |            |      |              |
 |      |         |      |            |      |              |
