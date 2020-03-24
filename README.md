@@ -144,7 +144,7 @@
 
 |  序号 |  功能块  | 提交人| 更新时间    | 主要功能类   | 示例代码位置   |
 | :---: | :------: | :---: | :---------: | :--- | :----------- |
-|   4.1  |  横向滚动TextView | 左志杰| 2018-07-23 | **MarqueeTextView** |com.kingoit.widgetproductor.show.MarqueeTextActivity|
+|   4.1  |  横向滚动TextView | zuo123 | 2018-07-23 | **MarqueeTextView** |com.kingoit.widgetproductor.show.MarqueeTextActivity|
 |      |         |      |            |      |              |
 |      |         |      |            |      |              |
 |      |         |      |            |      |              |
